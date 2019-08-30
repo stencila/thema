@@ -12,8 +12,8 @@ Prism.languages.json={property:{pattern:/"(?:\\.|[^\\"\r\n])*"(?=\s*:)/,greedy:!
 },{}],"cdjP":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};exports.__esModule=!0;var r=e(require("prismjs"));require("prismjs/components/prism-json"),require("prismjs/components/prism-markdown"),require("prismjs/plugins/line-highlight/prism-line-highlight"),require("prismjs/plugins/line-numbers/prism-line-numbers");var i=function(){document.querySelectorAll('pre[class*="language-"]').forEach(function(e){return e.classList.add("line-numbers")}),r.default.highlightAll()};document.addEventListener("DOMContentLoaded",i);
 },{"prismjs":"/XTE","prismjs/components/prism-json":"7Jei","prismjs/components/prism-markdown":"ojGz","prismjs/plugins/line-highlight/prism-line-highlight":"X3kC","prismjs/plugins/line-numbers/prism-line-numbers":"MdWC"}],"R7TG":[function(require,module,exports) {
-"use strict";exports.__esModule=!0,require("./syntaxHighlight");
-},{"./syntaxHighlight":"cdjP"}],"v1xW":[function(require,module,exports) {
+"use strict";exports.__esModule=!0,require("./syntaxHighlight");var e=function(){var e=document.querySelector("#theme-select");e&&e.addEventListener("change",function(e){var t=e.target.value;document.querySelectorAll('link[rel="stylesheet"]').forEach(function(e){return e.id===t?e.disabled=!1:e.disabled=!0})});document.querySelectorAll('[itemprop="references"] > li').forEach(function(e){var t=e.querySelector('[itemprop="datePublished"]'),r=e.querySelector('[itemprop="title"]');if(r){var n=r.cloneNode(!0);t&&t.parentNode&&t.parentNode.insertBefore(n,t.nextSibling);var o=e.querySelector('[itemtype="https://schema.stenci.la/PublicationIssue"]'),i=t.cloneNode(!0);o&&o.parentNode?o.parentNode.insertBefore(i,o.nextSibling):n&&n.parentNode&&n.parentNode.insertBefore(i,n.nextSibling)}})};document.addEventListener("DOMContentLoaded",e);
+},{"./syntaxHighlight":"cdjP"}],"/N4T":[function(require,module,exports) {
 "use strict";exports.__esModule=!0,require("../../common/js/index");
-},{"../../common/js/index":"R7TG"}]},{},["v1xW"], null)
-//# sourceMappingURL=nature.ac5037d3.js.map
+},{"../../common/js/index":"R7TG"}]},{},["/N4T"], null)
+//# sourceMappingURL=eLife.0d2900ff.js.map
