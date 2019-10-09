@@ -40,6 +40,6 @@ var r=require("./bundle-url").getBundleURL;function e(r){Array.isArray(r)||(r=[r
 },{"./bundle-url":"ARet"}],"OkSu":[function(require,module,exports) {
 module.exports=function(t){return fetch(t).then(function(t){return t.text()})};
 },{}],0:[function(require,module,exports) {
-var b=require("yU0Q");b.register("html",require("OkSu"));b.load([["simple.7f8d500a.html","H5e8"],["article-antibodies.9039bc5d.html","Q0Oh"],["article-drosophila.904e71fb.html","UO9E"],["article-rmarkdown.d0ea229c.html","QYrT"]]).then(function(){require("7QCb");});
+var b=require("yU0Q");b.register("html",require("OkSu"));b.load([["simple.5a18a677.html","H5e8"],["article-antibodies.9039bc5d.html","Q0Oh"],["article-drosophila.904e71fb.html","UO9E"],["article-rmarkdown.637579ef.html","QYrT"]]).then(function(){require("7QCb");});
 },{}]},{},[0], null)
 //# sourceMappingURL=demo.2b78ad7b.js.map
