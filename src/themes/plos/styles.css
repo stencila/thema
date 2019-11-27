@@ -299,6 +299,15 @@ blockquote {
   margin-bottom: 1.5rem;
 }
 
+:--authors {
+  padding: 0;
+  margin: 0 auto;
+}
+
+:--organizations {
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 380px) {
   ul,
   ol {

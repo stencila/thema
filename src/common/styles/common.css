@@ -7,6 +7,16 @@
 
 @import './citations.css';
 
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+:--affiliations {
+  display: inline;
+  padding: 0;
+}
+
 :--CodeChunk {
   pre,
   pre[class*='language-'] {

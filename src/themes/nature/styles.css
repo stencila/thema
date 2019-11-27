@@ -478,7 +478,11 @@ blockquote {
 }
 
 :--authors,
+:--organizations,
 :--CreativeWork header ol {
+  padding: 0;
+  margin: 0 auto;
+
   li {
     display: inline;
   }

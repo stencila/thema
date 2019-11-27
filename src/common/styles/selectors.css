@@ -4,7 +4,31 @@
  * In Thema the approach to CSS naming is, as much as possible, to
  * use custom selectors for the type of entities being styled and
  * their properties.
- */
+ *
+ * The top level selectors should target block level semantic elements, and avoid
+ * styling generic elements such as `div`s and `span`s. This limitation helps ensure that
+ * themes cause minimal conflicts with existing layouts and deeply nested components.
+ *
+*/
+@custom-selector :--pre pre, pre[class*="language-"];
+
+/**
+* To tweak or adjust an existing theme, you may override some common CSS variables found in the themes.
+
+* Available CSS variables are:
+* --color-accent: Color for accent elements, primarily used to add a brand highlights to the theme.
+* --color-key: Color for body text, and other elements using the inherited body text color.
+* --color-neutral: Subtle color, usually shades of gray, for element borders and other subtle details.
+* --color-stock: Article/Page background color, but also used for other elements.
+* --font-family-body: Font-family for paragraphs and other non-headline elements
+* --font-family-heading: Font-family for paragraphs and other non-headline elements
+* --font-family-mono: Font-family for monospaced text elements such as `pre` and `code`.
+* --max-width-media: Maximum width for media content, including images and interactive Code Chunks.
+* --max-width: Max width for textual elements and other non-media content.
+*
+* Note that not all themes make use of all available variables, and that some may expose additional options.
+* Please refer to the specific theme documentation.
+*/
 
 /**
  * Type selectors
