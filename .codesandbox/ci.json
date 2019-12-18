@@ -1,0 +1,3 @@
+{
+  "sandboxes": ["node", "https://github.com/stencila/thema"]
+}
