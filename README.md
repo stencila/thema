@@ -107,8 +107,6 @@ Extensions provide styling, and potentially interactivity, for node types that d
 
 ### Current extensions
 
-<!-- prettier-ignore-start -->
-<!-- EXTS-START -->
 | Name                          | Description                                                                                                                                                                                                                                 |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [cite](./themes/cite)         | Provides styling for in-text citations (i.e. `Cite` and `CiteGroup` nodes) and bibliographies (i.e. `CreativeWork` nodes in the `references` property of another `CreativeWork`).                                                           |
@@ -118,8 +116,6 @@ Extensions provide styling, and potentially interactivity, for node types that d
 | [math](./themes/math)         | Provides styling of math nodes using MathJax fonts and styles. Use this if there is any likely to be math content, i.e. `MathFragment` and/or `MathBlock` nodes, in documents that your theme targets.                                      |
 | [pages](./themes/pages)       | Provides a [`@media print` CSS at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) to modify properties when printing a document e.g. to PDF.                                                                                  |
 | [person](./themes/person)     | Provides styling of `Person` nodes e.g the `authors` of an article, or authors for each `citation` in it's `references`.                                                                                                                    |
-<!-- EXTS-END -->
-<!-- prettier-ignore-end -->
 
 ### Use an extension
 
