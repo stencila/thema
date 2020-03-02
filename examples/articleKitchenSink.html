@@ -128,46 +128,91 @@
   <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="lists">Lists</h1>
   <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="unordered">Unordered</h2>
   <ul itemscope="" itemtype="http://schema.org/ItemList">
-    <li itemscope="" itemtype="http://schema.org/ListItem">Hearts</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Spades</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Diamonds</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Clubs</li>
+    <li id="1" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="1">
+      <meta itemprop="url" content="#1">Hearts</li>
+    <li id="2" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="2">
+      <meta itemprop="url" content="#2">Spades</li>
+    <li id="3" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="3">
+      <meta itemprop="url" content="#3">Diamonds</li>
+    <li id="4" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="4">
+      <meta itemprop="url" content="#4">Clubs</li>
   </ul>
   <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="ordered">Ordered</h2>
   <ol itemscope="" itemtype="http://schema.org/ItemList">
-    <li itemscope="" itemtype="http://schema.org/ListItem">First</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Second</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Third</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Forth</li>
+    <li id="1" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="1">
+      <meta itemprop="url" content="#1">First</li>
+    <li id="2" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="2">
+      <meta itemprop="url" content="#2">Second</li>
+    <li id="3" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="3">
+      <meta itemprop="url" content="#3">Third</li>
+    <li id="4" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="4">
+      <meta itemprop="url" content="#4">Forth</li>
   </ol>
   <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="checked">Checked</h2>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">List items can be checked or not.</p>
   <ul itemscope="" itemtype="http://schema.org/ItemList">
-    <li itemscope="" itemtype="http://schema.org/ListItem">Done</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Not yet</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Complete!</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">Almost</li>
+    <li id="1" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="1">
+      <meta itemprop="url" content="#1">Done</li>
+    <li id="2" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="2">
+      <meta itemprop="url" content="#2">Not yet</li>
+    <li id="3" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="3">
+      <meta itemprop="url" content="#3">Complete!</li>
+    <li id="4" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="4">
+      <meta itemprop="url" content="#4">Almost</li>
   </ul>
   <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="nested">Nested</h2>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Lists can be nested and contain
     alternative types of content.</p>
   <ol itemscope="" itemtype="http://schema.org/ItemList">
-    <li itemscope="" itemtype="http://schema.org/ListItem">A</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">B<ul itemscope=""
-        itemtype="http://schema.org/ItemList">
-        <li itemscope="" itemtype="http://schema.org/ListItem">B1<ol itemscope=""
+    <li id="1" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="1">
+      <meta itemprop="url" content="#1">A</li>
+    <li id="2" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="2">
+      <meta itemprop="url" content="#2">B<ul itemscope="" itemtype="http://schema.org/ItemList">
+        <li id="1" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="1">
+          <meta itemprop="url" content="#1">B1<ol itemscope=""
             itemtype="http://schema.org/ItemList">
-            <li itemscope="" itemtype="http://schema.org/ListItem">B1a</li>
-            <li itemscope="" itemtype="http://schema.org/ListItem">B1b</li>
+            <li id="1" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="1">
+              <meta itemprop="url" content="#1">B1a</li>
+            <li id="2" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="2">
+              <meta itemprop="url" content="#2">B1b</li>
           </ol>
         </li>
-        <li itemscope="" itemtype="http://schema.org/ListItem">B2<ul itemscope=""
+        <li id="2" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="2">
+          <meta itemprop="url" content="#2">B2<ul itemscope=""
             itemtype="http://schema.org/ItemList">
-            <li itemscope="" itemtype="http://schema.org/ListItem">B2a</li>
-            <li itemscope="" itemtype="http://schema.org/ListItem">B2b</li>
+            <li id="1" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="1">
+              <meta itemprop="url" content="#1">B2a</li>
+            <li id="2" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="2">
+              <meta itemprop="url" content="#2">B2b</li>
           </ul>
         </li>
-        <li itemscope="" itemtype="http://schema.org/ListItem">B3</li>
+        <li id="3" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="3">
+          <meta itemprop="url" content="#3">B3</li>
       </ul>
     </li>
     <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Lorem, ipsum dolor sit amet
@@ -175,8 +220,12 @@
       repudiandae eum deleniti laboriosam ipsa quasi id vitae velit perferendis quas perspiciatis
       corrupti.</p>
     <ul itemscope="" itemtype="http://schema.org/ItemList">
-      <li itemscope="" itemtype="http://schema.org/ListItem">Checked</li>
-      <li itemscope="" itemtype="http://schema.org/ListItem">Unchecked</li>
+      <li id="1" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <meta itemprop="position" content="1">
+        <meta itemprop="url" content="#1">Checked</li>
+      <li id="2" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <meta itemprop="position" content="2">
+        <meta itemprop="url" content="#2">Unchecked</li>
     </ul>
   </ol>
   <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="code-types">Code types</h1>
