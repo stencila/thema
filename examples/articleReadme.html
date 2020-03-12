@@ -552,10 +552,10 @@
   </table>@import &#39;../../extensions/cite-apa/styles.css&#39;;import
   &#39;../../extensions/cite-apa&#39;npm run create:extension -- myextsrc/extensions/myext ├──
   index.ts ├── README.md └── styles.cssgit clone git@github.com:stencila/thema.git cd themanpm
-  installnpm run dev@import &#39;../../extensions/cite-apa/styles.css&#39;;import
+  installnpm run bootstrap@import &#39;../../extensions/cite-apa/styles.css&#39;;import
   &#39;../../extensions/cite-apa&#39;npm run create:extension -- myextsrc/extensions/myext ├──
   index.ts ├── README.md └── styles.cssgit clone git@github.com:stencila/thema.git cd themanpm
-  installnpm run dev<h3 itemscope="" itemtype="http://schema.stenci.la/Heading"
+  installnpm run bootstrapnpm run dev<h3 itemscope="" itemtype="http://schema.stenci.la/Heading"
     id="use-an-extension">Use an extension</h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To add an extension to your theme,
     you simply have to import it&#39;s CSS and Javascript.</p>
@@ -659,6 +659,10 @@ cd thema</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Install dependencies,</p>
   <pre itemscope=""
     itemtype="http://schema.stenci.la/CodeBlock"><code class="language-sh" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm install</code></pre>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Build auto-generated files necessary
+    for theme functionality and development,</p>
+  <pre itemscope=""
+    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-sh" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run bootstrap</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Run the development server,</p>
   <pre itemscope=""
     itemtype="http://schema.stenci.la/CodeBlock"><code class="language-sh" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run dev</code></pre>
@@ -666,6 +670,60 @@ cd thema</code></pre>
       href="http://localhost:1234/index.html" itemscope=""
       itemtype="http://schema.stenci.la/Link">http://localhost:1234/index.html</a> in your browser
     to view the demo.</p>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There are a few URL query parameters
+    which can be used to control the UI of the theme preview.</p>
+  <table itemscope="" itemtype="http://schema.org/Table">
+    <tbody>
+      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Parameter</td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Default Value</td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Description</td>
+      </tr>
+      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">theme</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">stencila</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Sets the active theme for the
+          preview</td>
+      </tr>
+      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">example</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">articleKitchenSink</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Sets the content for the
+          preview</td>
+      </tr>
+      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">ui</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">true</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">When set to <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">false</code> hides the header and theme
+          customization sidebar from the preview page</td>
+      </tr>
+      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">header</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">true</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">When set to <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">false</code> hides only the header from
+          the preview page</td>
+      </tr>
+      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">sidebar</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">true</code></td>
+        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">When set to <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">false</code> hides only the theme
+          customization sidebar from the preview page</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="creating-a-new-theme">Creating a
     new theme</h3>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading" id="scripted-creation">Scripted
