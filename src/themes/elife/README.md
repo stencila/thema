@@ -9,3 +9,11 @@ publisher:
 # eLife
 
 A theme for the journal eLife.
+
+# Committing Changes
+
+When committing to the fork that you put (Elife) before the colon.
+
+Example
+
+`fix(Elife): Some comment`
