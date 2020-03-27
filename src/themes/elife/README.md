@@ -12,8 +12,8 @@ A theme for the journal eLife.
 
 # Committing Changes
 
-When committing to the fork that you put (Elife) before the colon.
+When committing to the fork you will need to make sure that you put (Elife) before the colon.
 
-Example
+Example:
 
 `fix(Elife): Some comment`
