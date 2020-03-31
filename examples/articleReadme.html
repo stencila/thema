@@ -82,8 +82,16 @@
             itemtype="http://schema.stenci.la/Link">Prerequisites</a></li>
         <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
           <meta itemprop="position" content="2">
-          <meta itemprop="url" content="#2"><a href="#getting-started" itemscope=""
-            itemtype="http://schema.stenci.la/Link">Getting started</a></li>
+          <meta itemprop="url" content="#2">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#getting-started"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Getting started</a></p>
+          <ul itemscope="" itemtype="http://schema.org/ItemList">
+            <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+              <meta itemprop="position" content="1">
+              <meta itemprop="url" content="#1"><a href="#gallery-ui-parameters" itemscope=""
+                itemtype="http://schema.stenci.la/Link">Gallery UI parameters</a></li>
+          </ul>
+        </li>
         <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
           <meta itemprop="position" content="3">
           <meta itemprop="url" content="#3">
@@ -105,21 +113,13 @@
                 itemtype="http://schema.stenci.la/Link">Approaches</a></li>
           </ul>
         </li>
-      </ul>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <meta itemprop="position" content="6">
-      <meta itemprop="url" content="#6">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#notes" itemscope=""
-          itemtype="http://schema.stenci.la/Link">Notes</a></p>
-      <ul itemscope="" itemtype="http://schema.org/ItemList">
         <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-          <meta itemprop="position" content="1">
-          <meta itemprop="url" content="#1"><a href="#generated-code" itemscope=""
+          <meta itemprop="position" content="4">
+          <meta itemprop="url" content="#4"><a href="#generated-code" itemscope=""
             itemtype="http://schema.stenci.la/Link">Generated code</a></li>
         <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-          <meta itemprop="position" content="2">
-          <meta itemprop="url" content="#2">
+          <meta itemprop="position" content="5">
+          <meta itemprop="url" content="#5">
           <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#testing"
               itemscope="" itemtype="http://schema.stenci.la/Link">Testing</a></p>
           <ul itemscope="" itemtype="http://schema.org/ItemList">
@@ -134,15 +134,19 @@
                 itemtype="http://schema.stenci.la/Link">Visual regressions</a></li>
           </ul>
         </li>
+        <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="6">
+          <meta itemprop="url" content="#6"><a href="#committing" itemscope=""
+            itemtype="http://schema.stenci.la/Link">Committing</a></li>
       </ul>
     </li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <meta itemprop="position" content="7">
-      <meta itemprop="url" content="#7"><a href="#acknowledgments" itemscope=""
+      <meta itemprop="position" content="6">
+      <meta itemprop="url" content="#6"><a href="#acknowledgments" itemscope=""
         itemtype="http://schema.stenci.la/Link">Acknowledgments</a></li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <meta itemprop="position" content="8">
-      <meta itemprop="url" content="#8">
+      <meta itemprop="position" content="7">
+      <meta itemprop="url" content="#7">
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#utilities-api"
           itemscope="" itemtype="http://schema.stenci.la/Link">Utilities API</a></p>
       <ul itemscope="" itemtype="http://schema.org/ItemList">
@@ -236,10 +240,15 @@
   <pre class="language-sh" itemscope=""
     itemtype="http://schema.stenci.la/CodeBlock"><code>npm install @stencila/thema</code></pre>
   <pre class="language-css" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>/* myStyleSheet.css */
-@import &#39;@stencila/thema/dist/stencila/styles.css&#39;;</code></pre>
+@import &#39;@stencila/thema/dist/themes/stencila/styles.css&#39;;</code></pre>
   <pre class="language-js" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>/* myJavaScript.js */
-@import &#39;@stencila/thema/dist/stencila&#39;;</code></pre>
+@import &#39;@stencila/thema/dist/themes/stencila&#39;;</code></pre>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="themes">Themes</h3>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Thema comes with several premade
+    themes. Preview and customize the themes <a href="https://stencila.github.io/thema/"
+      itemscope="" itemtype="http://schema.stenci.la/Link">in the gallery</a>, or learn how to <a
+      href="#creating-a-new-theme" itemscope="" itemtype="http://schema.stenci.la/Link">make one
+      from scratch</a>.</p>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading" id="current-themes">Current themes
   </h4>
   <table itemscope="" itemtype="http://schema.org/Table">
@@ -315,32 +324,39 @@
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading" id="structure-of-themes">Structure of
     themes</h4>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There are two primary files inside
-    each theme folder. The naming of these two files is important, and they must not be changed
-    since they are referred to from <code itemscope=""
+    each theme folder. The naming convention of these two files is important, and they must not be
+    changed since they are referred to from <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">encoda</code>.</p>
   <ul itemscope="" itemtype="http://schema.org/ItemList">
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="1">
       <meta itemprop="url" content="#1"><code itemscope=""
         itemtype="http://schema.stenci.la/CodeFragment">styles.css</code>: CSS and visual styles
-      specific to the theme. We use PostCSS to compile the CSS, this is done to utilize PostCSS
-      utilities such as autoprefixing vendor flags to selectors, and writing nested selectors.</li>
+      specific to the theme. We use <a href="https://postcss.org" itemscope=""
+        itemtype="http://schema.stenci.la/Link">PostCSS</a> to compile the CSS. This is done to
+      utilize PostCSS utilities such as autoprefixing vendor flags to selectors, and writing nested
+      selectors.</li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="2">
       <meta itemprop="url" content="#2"><code itemscope=""
-        itemtype="http://schema.stenci.la/CodeFragment">index.ts</code>: Written in TypeScript, this
-      file is loaded asynchronously. It is used to progressively enhance the theme with things like
-      syntax highlighting of code blocks.</li>
+        itemtype="http://schema.stenci.la/CodeFragment">index.ts</code>: Written in <a
+        href="https://www.typescriptlang.org" itemscope=""
+        itemtype="http://schema.stenci.la/Link">TypeScript</a>, this file is loaded asynchronously.
+      It is used to progressively enhance the theme with things like syntax highlighting of code
+      blocks.</li>
   </ul>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="web-components">Web Components
   </h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <a
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
       href="https://github.com/stencila/designa/tree/master/packages/components" itemscope=""
-      itemtype="http://schema.stenci.la/Link">default set of Web Components</a> to provide
-    interactivity to document nodes.</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Currently, the following node types
-    have Web Components. Encoda will encode these nodes types as custom HTML elements that get
-    hydrated into these components.</p>
+      itemtype="http://schema.stenci.la/Link">Stencila Web Components</a> are used to provide
+    interactivity and enhancement to several document nodes.</p>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+      href="https://github.com/stencila/encoda" itemscope=""
+      itemtype="http://schema.stenci.la/Link">Encoda</a> will output several <a
+      href="https://github.com/stencila/schema" itemscope=""
+      itemtype="http://schema.stenci.la/Link">Schema nodes</a> as custom HTML elements. Currently,
+    the following node types have Web Components:</p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -363,8 +379,11 @@
     </tbody>
   </table>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">More components will be added over
-    time. In the meantime, the &quot;pseudo-components&quot; in sibling folders to this one, provide
-    styling for some other node types.</p>
+    time. In the meantime, the &quot;pseudo-component&quot; <a href="./src/extensions" itemscope=""
+      itemtype="http://schema.stenci.la/Link">folders in <code itemscope=""
+        itemtype="http://schema.stenci.la/CodeFragment">src/extensions</code></a>, provide styling
+    for some other node types. See the <a href="#extensions" itemscope=""
+      itemtype="http://schema.stenci.la/Link">Extensions section</a> for more details.</p>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="extensions">Extensions</h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Extensions provide styling, and
     potentially interactivity, for node types that do not yet have corresponding web components.
@@ -373,11 +392,15 @@
     components library, thereby obviating the need to import them explicitly.</p>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading" id="current-extensions">Current
     extensions</h4>@import &#39;../../extensions/cite-apa/styles.css&#39;;import
-  &#39;../../extensions/cite-apa&#39;npm run create:extension -- myextsrc/extensions/myext ├──
-  README.md └── styles.css@import &#39;../../extensions/cite-apa/styles.css&#39;;import
-  &#39;../../extensions/cite-apa&#39;npm run create:extension -- myextsrc/extensions/myext ├──
-  README.md └── styles.cssgit clone git@github.com:stencila/thema.git cd thema<table itemscope=""
-    itemtype="http://schema.org/Table">
+  &#39;../../extensions/cite-apa&#39;npm run create:extension -- myextensionnamesrc/extensions/myext
+  ├── README.md └── styles.css# Clone this repository git clone git@github.com:stencila/thema.git cd
+  thema # Install dependencies npm install # Build auto-generated files necessary for theme
+  functionality and development npm run bootstrap # Run the development server npm run dev@import
+  &#39;../../extensions/cite-apa/styles.css&#39;;import &#39;../../extensions/cite-apa&#39;npm run
+  create:extension -- myextensionnamesrc/extensions/myext ├── README.md └── styles.css# Clone this
+  repository git clone git@github.com:stencila/thema.git cd thema # Install dependencies npm install
+  # Build auto-generated files necessary for theme functionality and development npm run bootstrap #
+  Run the development server npm run dev<table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
         <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Name</td>
@@ -469,13 +492,16 @@
       </tr>
     </tbody>
   </table>@import &#39;../../extensions/cite-apa/styles.css&#39;;import
-  &#39;../../extensions/cite-apa&#39;npm run create:extension -- myextsrc/extensions/myext ├──
-  README.md └── styles.cssgit clone git@github.com:stencila/thema.git cd themanpm installnpm run
-  bootstrap@import &#39;../../extensions/cite-apa/styles.css&#39;;import
-  &#39;../../extensions/cite-apa&#39;npm run create:extension -- myextsrc/extensions/myext ├──
-  README.md └── styles.cssgit clone git@github.com:stencila/thema.git cd themanpm installnpm run
-  bootstrapnpm run dev<h4 itemscope="" itemtype="http://schema.stenci.la/Heading"
-    id="use-an-extension">Use an extension</h4>
+  &#39;../../extensions/cite-apa&#39;npm run create:extension -- myextensionnamesrc/extensions/myext
+  ├── README.md └── styles.css# Clone this repository git clone git@github.com:stencila/thema.git cd
+  thema # Install dependencies npm install # Build auto-generated files necessary for theme
+  functionality and development npm run bootstrap # Run the development server npm run dev@import
+  &#39;../../extensions/cite-apa/styles.css&#39;;import &#39;../../extensions/cite-apa&#39;npm run
+  create:extension -- myextensionnamesrc/extensions/myext ├── README.md └── styles.css# Clone this
+  repository git clone git@github.com:stencila/thema.git cd thema # Install dependencies npm install
+  # Build auto-generated files necessary for theme functionality and development npm run bootstrap #
+  Run the development server npm run devnpm run create:theme -- mytheme<h4 itemscope=""
+    itemtype="http://schema.stenci.la/Heading" id="use-an-extension">Use an extension</h4>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To add an extension to your theme,
     you simply have to import it&#39;s CSS and Javascript.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">First import it&#39;s <code
@@ -508,13 +534,13 @@
     not needed in a hurry, then it is probably better to put the effort into contributing a web
     component to <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">@stencila/components</code>. Having said that,
-    if your more comfortable writing a simple extension here, to try out some ideas for something
+    if you are more comfortable writing a simple extension here, to try out some ideas for something
     that may become a fully fledged web component, we are grateful for <em itemscope=""
       itemtype="http://schema.stenci.la/Emphasis">any</em> contributions.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The easiest way to create a new
     extension is using:</p>
   <pre class="language-bash" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code>npm run create:extension -- myext</code></pre>
+    itemtype="http://schema.stenci.la/CodeBlock"><code>npm run create:extension -- myextensionname</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">That will update the <code
       itemscope="" itemtype="http://schema.stenci.la/CodeFragment">src/extensions/index.ts</code>
     file with a new entry for your extension and create a new folder in the <code itemscope=""
@@ -560,23 +586,26 @@
   </h4>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The best way to get started is to
     develop CSS and JS for a theme with the live updating demo running.</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Clone this repository,</p>
-  <pre class="language-sh" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>git clone git@github.com:stencila/thema.git
-cd thema</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Install dependencies,</p>
-  <pre class="language-sh" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code>npm install</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Build auto-generated files necessary
-    for theme functionality and development,</p>
-  <pre class="language-sh" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code>npm run bootstrap</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Run the development server,</p>
-  <pre class="language-sh" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code>npm run dev</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Then open <a
-      href="http://localhost:1234/index.html" itemscope=""
-      itemtype="http://schema.stenci.la/Link">http://localhost:1234/index.html</a> in your browser
-    to view the demo.</p>
+  <pre class="language-sh" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code># Clone this repository
+git clone git@github.com:stencila/thema.git
+cd thema
+
+# Install dependencies
+npm install
+
+# Build auto-generated files necessary for theme functionality and development
+npm run bootstrap
+
+# Run the development server
+npm run dev</code></pre>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Your browser should automatically
+    open (<a href="http://localhost:8081" itemscope=""
+      itemtype="http://schema.stenci.la/Link">http://localhost:8081</a>)<a href="" itemscope=""
+      itemtype="http://schema.stenci.la/Link">http://localhost:8081</a> with the theme gallery view.
+    Any changes to the stylesheets and code will be automatically recompiled and reflected in the
+    browser.</p>
+  <h5 itemscope="" itemtype="http://schema.stenci.la/Heading" id="gallery-ui-parameters">Gallery UI
+    parameters</h5>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There are a few URL query parameters
     which can be used to control the UI of the theme preview.</p>
   <table itemscope="" itemtype="http://schema.org/Table">
@@ -657,7 +686,7 @@ cd thema</code></pre>
       <meta itemprop="position" content="3">
       <meta itemprop="url" content="#3">a <code itemscope=""
         itemtype="http://schema.stenci.la/CodeFragment">index.ts</code> for any Typescript that the
-      style may need</li>
+      theme may need</li>
   </ul>
   <h5 itemscope="" itemtype="http://schema.stenci.la/Heading" id="manual-creation">Manual creation
   </h5>
@@ -678,17 +707,25 @@ cd thema</code></pre>
       <meta itemprop="position" content="1">
       <meta itemprop="url" content="#1">the <a href="./src/themes/skeleton/README.md" itemscope=""
         itemtype="http://schema.stenci.la/Link"><code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">skeleton</code></a> approach: flesh things
-      out yourself; start from scratch with nothing but be unaffected from changes to <code
-        itemscope="" itemtype="http://schema.stenci.la/CodeFragment">shared</code> styles and
-      scripts</li>
+          itemtype="http://schema.stenci.la/CodeFragment">skeleton</code></a> approach: define all
+      styles yourself, importing only the <code itemscope=""
+        itemtype="http://schema.stenci.la/CodeFragment">extensions</code> needed for the theme</li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="2">
-      <meta itemprop="url" content="#2">the <a href="./src/themes/bootstrap/README.md" itemscope=""
+      <meta itemprop="url" content="#2">the <a href="./src/themes/stencila/README.md" itemscope=""
+        itemtype="http://schema.stenci.la/Link"><code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">stencila</code></a> approach: leverage <a
+        href="./src/themes/skeleton/README.md" itemscope=""
+        itemtype="http://schema.stenci.la/Link"><code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">skeleton</code> theme</a> as a foundation,
+      overriding CSS variables and nodes as needed start from a relatively</li>
+    <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="3">
+      <meta itemprop="url" content="#3">the <a href="./src/themes/bootstrap/README.md" itemscope=""
         itemtype="http://schema.stenci.la/Link"><code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">bootstrap</code></a> approach: reuse
-      existing stylesheets from elsewhere by mapping between Thema&#39;s semantic selectors and
-      existing selectors in those stylesheets</li>
+      existing stylesheets from elsewhere by creating a mapping between Thema&#39;s semantic
+      selectors and existing selectors in those stylesheets</li>
   </ul>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">It is important to note that the
     <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">skeleton</code> and <code
@@ -699,7 +736,8 @@ cd thema</code></pre>
     types e.g. starting from scratch for some nodes and using <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">shared</code> styles for others.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There are a few key rules enforced by
-    Stylelint:</p>
+    <a href="https://stylelint.io" itemscope=""
+      itemtype="http://schema.stenci.la/Link">Stylelint</a>:</p>
   <ul itemscope="" itemtype="http://schema.org/ItemList">
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="1">
@@ -718,41 +756,28 @@ cd thema</code></pre>
       also include print media overrides with your theme.</li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="4">
-      <meta itemprop="url" content="#4">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">These themes are primarily
-        intended for rendering interactive articles and other relatively long forms of prose.</p>
-      <ul itemscope="" itemtype="http://schema.org/ItemList">
-        <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-          <meta itemprop="position" content="1">
-          <meta itemprop="url" content="#1">As such, good typography is paramount. Reading Matthew
-          Butterick‘s [Typography in Ten</li>
-        <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-          <meta itemprop="position" content="2">
-          <meta itemprop="url" content="#2">Minutes](<a
-            href="https://practicaltypography.com/typography-in-ten-minutes.html" itemscope=""
-            itemtype="http://schema.stenci.la/Link">https://practicaltypography.com/typography-in-ten-minutes.html</a>)
-          will give you a solid foundation and a</li>
-        <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-          <meta itemprop="position" content="3">
-          <meta itemprop="url" content="#3">reference for crafting your own themes.</li>
-      </ul>
+      <meta itemprop="url" content="#4">These themes are primarily intended for rendering
+      interactive articles and other relatively long forms of prose. As such, good typography is
+      paramount. Reading <a href="https://practicaltypography.com/typography-in-ten-minutes.html"
+        itemscope="" itemtype="http://schema.stenci.la/Link">Matthew Butterick’s Typography in Ten
+        Minutes</a> will give you a solid foundation and a reference for crafting your own themes.
     </li>
   </ul>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To tweak or adjust an existing theme,
     you may override some common CSS variables found in the themes. Please refer to the specific
     theme documentation for available variables.</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Type selectors</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">For types defined in <a
-      href="http://schema.org" itemscope=""
-      itemtype="http://schema.stenci.la/Link">http://schema.org</a> (e.g. <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">Article</code>), or extensions such as, <a
-      href="http://schema.stenci.la" itemscope=""
-      itemtype="http://schema.stenci.la/Link">http://schema.stenci.la</a> (e.g. <code itemscope=""
+  <h6 itemscope="" itemtype="http://schema.stenci.la/Heading" id="type-selectors">Type selectors
+  </h6>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">For types defined by <a
+      href="http://schema.org" itemscope="" itemtype="http://schema.stenci.la/Link">Schema.org</a>
+    (e.g. <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Article</code>), or
+    extensions such as, <a href="http://schema.stenci.la" itemscope=""
+      itemtype="http://schema.stenci.la/Link">schema.stenci.la</a> (e.g. <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">CodeChunk</code>), <a
       href="http://bioschemas.org" itemscope=""
-      itemtype="http://schema.stenci.la/Link">http://bioschemas.org</a> (e.g. <code itemscope=""
+      itemtype="http://schema.stenci.la/Link">Bioschemas</a> (e.g. <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">Taxon</code>) etc.</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Conventions:</p>
+  <h6 itemscope="" itemtype="http://schema.stenci.la/Heading" id="conventions">Conventions:</h6>
   <ul itemscope="" itemtype="http://schema.org/ItemList">
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="1">
@@ -764,14 +789,11 @@ cd thema</code></pre>
         itemtype="http://schema.stenci.la/CodeFragment">[itemtype=...]</code> selector if possible
       (i.e. if Encoda encodes it in HTML)</li>
   </ul>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Property selectors</p>
+  <h6 itemscope="" itemtype="http://schema.stenci.la/Heading" id="property-selectors">Property
+    selectors</h6>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">For properties of types defined in
-    schemas. Note that some of these select an entire container property e.g. <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">authors</code> and selector for a class, and
-    some select items in those properties e.g. <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">author</code> and select for a <code
-      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">itemprop</code>.</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Conventions:</p>
+    schemas.</p>
+  <h6 itemscope="" itemtype="http://schema.stenci.la/Heading" id="conventions-1">Conventions:</h6>
   <ul itemscope="" itemtype="http://schema.org/ItemList">
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="1">
@@ -780,11 +802,6 @@ cd thema</code></pre>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="2">
       <meta itemprop="url" content="#2">use a <code itemscope=""
-        itemtype="http://schema.stenci.la/CodeFragment">.class</code> selector for container
-      properties</li>
-    <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <meta itemprop="position" content="3">
-      <meta itemprop="url" content="#3">use a <code itemscope=""
         itemtype="http://schema.stenci.la/CodeFragment">[itemprop=...]</code> selector for singular
       properties, or items of container properties</li>
   </ul>
@@ -866,13 +883,6 @@ cd thema</code></pre>
       </tr>
     </tbody>
   </table>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="notes">Notes</h3>
-  <ul itemscope="" itemtype="http://schema.org/ItemList">
-    <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <meta itemprop="position" content="1">
-      <meta itemprop="url" content="#1">Theme authors should be able to override the styles of the
-      web components as part of their theme.</li>
-  </ul>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading" id="generated-code">Generated code
   </h4>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Some files in the <code itemscope=""
@@ -980,6 +990,39 @@ cd thema</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There is a pseudo-test in <code
       itemscope="" itemtype="http://schema.stenci.la/CodeFragment">test/screenshot.test.js</code>
     which can be un-skipped to help with debugging the automated running of tests.</p>
+  <h4 itemscope="" itemtype="http://schema.stenci.la/Heading" id="committing">Committing</h4>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Commit messages should follow the <a
+      href="https://www.conventionalcommits.org/" itemscope=""
+      itemtype="http://schema.stenci.la/Link">conventional commits</a> specification. This is useful
+    (but not essential) because commit messages are used to determine the semantic version of
+    releases and to generate the project&#39;s <a
+      href="https://github.com/stencila/thema/blob/next/CHANGELOG.md" itemscope=""
+      itemtype="http://schema.stenci.la/Link">CHANGELOG.md</a>. If appropriate, use the sentence
+    case theme name as the scope (to help make both <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">git log</code> and the CHANGELOG more
+    readable). Some examples,</p>
+  <ul itemscope="" itemtype="http://schema.org/ItemList">
+    <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="1">
+      <meta itemprop="url" content="#1"><code itemscope=""
+        itemtype="http://schema.stenci.la/CodeFragment">fix(Wilmore): Fix Code, Math, DataPublished
+        node formatting &amp; styles</code></li>
+    <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="2">
+      <meta itemprop="url" content="#2"><code itemscope=""
+        itemtype="http://schema.stenci.la/CodeFragment">feat(Elife): Use eLife corresponding author
+        envelope icon</code></li>
+    <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="3">
+      <meta itemprop="url" content="#3"><code itemscope=""
+        itemtype="http://schema.stenci.la/CodeFragment">docs(README): Add some notes on
+        testing</code></li>
+    <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <meta itemprop="position" content="4">
+      <meta itemprop="url" content="#4"><code itemscope=""
+        itemtype="http://schema.stenci.la/CodeFragment">ci(Travis): Fix command to check
+        themes</code></li>
+  </ul>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="acknowledgments">Acknowledgments
   </h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">We rely on many tools and services
