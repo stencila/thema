@@ -450,19 +450,6 @@
           styled by the base Stencila Web Components.</td>
       </tr>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="./themes/headings"
-            itemscope="" itemtype="http://schema.stenci.la/Link">headings</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">A temporary extensions that
-          changes the way that <code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">Heading</code> nodes are represented.
-          Ensures that there is only one <code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">&lt;h1&gt;</code> tag (for the <code
-            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">title</code> property) and
-          that <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Heading</code>
-          nodes are represented as <code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">&lt;h${depth+1}&gt;</code>.</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
         <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="./themes/math"
             itemscope="" itemtype="http://schema.stenci.la/Link">math</a></td>
         <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Provides styling of math nodes
@@ -1075,9 +1062,9 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Register a function to be executed
     when the DOM is fully loaded.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Detail</strong>: Use this to wrap calls to the DOM
-    selection and manipulation functions to be sure that the DOM is ready before working on it.</p>
+    selection and manipulation functions to be sure that the DOM is ready before working on it. </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1094,7 +1081,7 @@ npm run dev</code></pre>
     </tbody>
   </table>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Example</strong> <code itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Example</strong><code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">js ready(() =&gt; { // Use other DOM
       manipulation functions here }) </code> <a href="#" itemscope=""
       itemtype="http://schema.stenci.la/Link"></a></p>
@@ -1106,19 +1093,20 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Select the first element matching a
     CSS selector.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Returns</strong>: <span itemscope=""
-      itemtype="http://schema.stenci.la/Array">[{text:'Element',type:'CodeFragment'},' |']</span> |
-    <span itemscope="" itemtype="http://schema.stenci.la/Array">[{text:'null',type:'CodeFragment'},'
-      - An Element or null if no match : This function provides a short hand for querySelector but
-      also allowing for the use of semantic selectors. You can use it for the whole document, or
-      scoped to a particular element.']</span> - An <code itemscope=""
+      itemtype="http://schema.stenci.la/Array">[{text:'Element',type:'CodeFragment'},'
+      |',{text:'',type:'CodeFragment'}]</span> | <span itemscope=""
+      itemtype="http://schema.stenci.la/Array">[{text:'null',type:'CodeFragment'},' - An Element or
+      null if no match: This function provides a short hand for querySelector but also allowing for
+      the use of semantic selectors. You can use it for the whole document, or scoped to a
+      particular element.']</span> - An <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">Element</code> or <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">null</code> if no match <strong itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">null</code> if no match<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Detail</strong>: This function provides a short hand
     for <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">querySelector</code> but
     also allowing for the use of semantic selectors. You can use it for the whole document, or
-    scoped to a particular element.</p>
+    scoped to a particular element. </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1146,10 +1134,10 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Example</strong> <em itemscope=""
       itemtype="http://schema.stenci.la/Emphasis">(Select the first element from the document
-      matching selector)</em> ```js</p>
+      matching selector)</em>```js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">first(&#39;:--CodeChunk&#39;) <code
       itemscope="" itemtype="http://schema.stenci.la/CodeFragment">**Example** *(Select the first
-      element within an element matching the selector)*</code>js</p>
+      element within an element matching the selector)* </code>js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">first(elem, &#39;:--author&#39;) ```
     <a href="#" itemscope="" itemtype="http://schema.stenci.la/Link"></a></p>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading" id="selectelem-selector-⇒-array">
@@ -1158,15 +1146,14 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Select all elements matching a CSS
     selector.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Returns</strong>: <span itemscope=""
       itemtype="http://schema.stenci.la/Array">[{text:'Array.',type:'CodeFragment'},' - An array of
-      elements : Provides a short hand for using']</span> - An array of elements <strong
-      itemscope="" itemtype="http://schema.stenci.la/Strong">Detail</strong>: Provides a short hand
-    for using <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">querySelectorAll</code> but also allowing for
-    the use of semantic selectors. You can use it for the whole document, or scoped to a particular
-    element.</p>
+      elements: Provides a short hand for using']</span> - An array of elements<strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Detail</strong>: Provides a short hand for using
+    <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">querySelectorAll</code> but
+    also allowing for the use of semantic selectors. You can use it for the whole document, or
+    scoped to a particular element. </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1194,10 +1181,10 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Example</strong> <em itemscope=""
       itemtype="http://schema.stenci.la/Emphasis">(Select all elements from the document matching
-      selector)</em> ```js</p>
+      selector)</em>```js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">select(&#39;:--CodeChunk&#39;) <code
       itemscope="" itemtype="http://schema.stenci.la/CodeFragment">**Example** *(Select all elements
-      within an element matching the selector)*</code>js</p>
+      within an element matching the selector)* </code>js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">select(elem, &#39;:--author&#39;) ```
     <a href="#" itemscope="" itemtype="http://schema.stenci.la/Link"></a></p>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading"
@@ -1207,13 +1194,13 @@ npm run dev</code></pre>
       itemtype="http://schema.stenci.la/CodeFragment">Element</code></h4>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Create a new element.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Detail</strong>: This function allows creation of
     new elements using either a (a) HTML string (b) CSS selector like string, or (c) an <code
       itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Element</code>. CSS selectors are
     are convenient way to create elements with attributes, particularly Microdata elements. They can
     be prone to syntax errors however. Alternatively, the second argument can be an object of
-    attribute name:value pairs.</p>
+    attribute name:value pairs. </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1275,16 +1262,16 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Example</strong> <em itemscope=""
       itemtype="http://schema.stenci.la/Emphasis">(Create a &lt;figure&gt; with id, class and
-      itemtype attributes)</em> ```js</p>
+      itemtype attributes)</em>```js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">create(&#39;figure #fig1 .fig
     :--Figure&#39;) // <figure itemscope="" itemtype="http://schema.stenci.la/Figure" id="fig1">//
     </figure> <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">**Example** *(As
-      above but using an object to specify attributes)*</code>js</p>
+      above but using an object to specify attributes)* </code>js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">create(&#39;figure&#39;, { id:
     &#39;fig1&#39;, class: &#39;fig&#39;, itemscope: &#39;&#39;, itemtype:
     translate(&#39;:--Figure&#39;) }) <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">**Example** *(Create a Person with a name
-      property)*</code>js</p>
+      property)* </code>js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">create(&#39;:--Person&#39;,
     create(&#39;span :--name&#39;, &#39;John Doe&#39;)) // <span itemscope=""
       itemtype="http://schema.org/Person" itemprop="author"><span
@@ -1298,23 +1285,23 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Get or set the tag name of an
     element.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Returns</strong>: <span itemscope=""
-      itemtype="http://schema.stenci.la/Array">[{text:'string',type:'CodeFragment'},' |']</span> |
-    <span itemscope=""
+      itemtype="http://schema.stenci.la/Array">[{text:'string',type:'CodeFragment'},'
+      |',{text:'',type:'CodeFragment'}]</span> | <span itemscope=""
       itemtype="http://schema.stenci.la/Array">[{text:'Element',type:'CodeFragment'},' - The
-      lowercase tag name when getting, a new element when setting. : Caution must be used when
+      lowercase tag name when getting, a new element when setting.: Caution must be used when
       setting the tag. This function does not actually change the tag of the element (that is not
       possible) but instead returns a new Element that is a clone of the original apart from having
       the new tag name. Use the replace function where necessary in association with this
-      function.']</span> - The lowercase tag name when getting, a new element when setting. <strong
+      function.']</span> - The lowercase tag name when getting, a new element when setting.<strong
       itemscope="" itemtype="http://schema.stenci.la/Strong">Detail</strong>: Caution must be used
     when setting the tag. This function does not actually change the tag of the element (that is not
     possible) but instead returns a new <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">Element</code> that is a clone of the original
     apart from having the new tag name. Use the <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">replace</code> function where necessary in
-    association with this function.</p>
+    association with this function. </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1341,14 +1328,14 @@ npm run dev</code></pre>
   </table>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Example</strong> <em itemscope=""
-      itemtype="http://schema.stenci.la/Emphasis">(Get the tag name as a lowercase string)</em>
-    ```js</p>
+      itemtype="http://schema.stenci.la/Emphasis">(Get the tag name as a lowercase string)</em>```js
+  </p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">tag(elem) // &quot;h3&quot; <code
       itemscope="" itemtype="http://schema.stenci.la/CodeFragment">**Example** *(Setting the tag
-      actually returns a new element)*</code>js</p>
+      actually returns a new element)* </code>js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">tag(tag(elem, &#39;h2&#39;)) //
     &quot;h2&quot; <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">**Example**
-      *(Change the tag name of an element)*</code>js</p>
+      *(Change the tag name of an element)* </code>js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">replace(elem, tag(elem,
     &#39;h2&#39;)) ``` <a href="#" itemscope="" itemtype="http://schema.stenci.la/Link"></a></p>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading"
@@ -1359,14 +1346,14 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Get or set the attributes of an
     element</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Returns</strong>: <span itemscope=""
-      itemtype="http://schema.stenci.la/Array">[{text:'object',type:'CodeFragment'},' |']</span> |
-    <span itemscope=""
+      itemtype="http://schema.stenci.la/Array">[{text:'object',type:'CodeFragment'},'
+      |',{text:'',type:'CodeFragment'}]</span> | <span itemscope=""
       itemtype="http://schema.stenci.la/Array">[{text:'undefined',type:'CodeFragment'},' - The
       attributes of the element when getting, undefined when setting']</span> - The attributes of
     the element when getting, <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">undefined</code> when setting</p>
+      itemtype="http://schema.stenci.la/CodeFragment">undefined</code> when setting </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1401,14 +1388,15 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Get or set the value of an attribute
     on an element.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Returns</strong>: <span itemscope=""
-      itemtype="http://schema.stenci.la/Array">[{text:'string',type:'CodeFragment'},' |']</span> |
-    <span itemscope="" itemtype="http://schema.stenci.la/Array">[{text:'null',type:'CodeFragment'},'
-      - a string if the attribute exists, null if does not exist, or when setting']</span> - a <code
-      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">string</code> if the attribute
-    exists, <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">null</code> if does
-    not exist, or when setting</p>
+      itemtype="http://schema.stenci.la/Array">[{text:'string',type:'CodeFragment'},'
+      |',{text:'',type:'CodeFragment'}]</span> | <span itemscope=""
+      itemtype="http://schema.stenci.la/Array">[{text:'null',type:'CodeFragment'},' - a string if
+      the attribute exists, null if does not exist, or when setting']</span> - a <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">string</code> if the attribute exists, <code
+      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">null</code> if does not exist, or
+    when setting </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1441,10 +1429,10 @@ npm run dev</code></pre>
   </table>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Example</strong> <em itemscope=""
-      itemtype="http://schema.stenci.la/Emphasis">(Set an attribute value)</em> ```js</p>
+      itemtype="http://schema.stenci.la/Emphasis">(Set an attribute value)</em>```js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">attr(elem, &quot;attr&quot;,
     &quot;value&quot;) <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">**Example** *(Get an attribute)*</code>js</p>
+      itemtype="http://schema.stenci.la/CodeFragment">**Example** *(Get an attribute)* </code>js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">attr(elem, &quot;attr&quot;) //
     &quot;value&quot; ``` <a href="#" itemscope="" itemtype="http://schema.stenci.la/Link"></a></p>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading"
@@ -1457,16 +1445,18 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Get or set the text content of an
     element.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Returns</strong>: <span itemscope=""
-      itemtype="http://schema.stenci.la/Array">[{text:'string',type:'CodeFragment'},' |']</span> |
-    <span itemscope="" itemtype="http://schema.stenci.la/Array">[{text:'null',type:'CodeFragment'},'
-      | ',{text:'undefined',type:'CodeFragment'},' - null if there is no text content,']</span> |
-    <span itemscope=""
+      itemtype="http://schema.stenci.la/Array">[{text:'string',type:'CodeFragment'},'
+      |',{text:'',type:'CodeFragment'}]</span> | <span itemscope=""
+      itemtype="http://schema.stenci.la/Array">[{text:'null',type:'CodeFragment'},' |
+      ',{text:'undefined',type:'CodeFragment'},' - null if there is no text content,
+      undefined']</span> | <span itemscope=""
       itemtype="http://schema.stenci.la/Array">[{text:'undefined',type:'CodeFragment'},' - null if
       there is no text content, undefined when setting']</span> - <code itemscope=""
       itemtype="http://schema.stenci.la/CodeFragment">null</code> if there is no text content, <code
-      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">undefined</code> when setting</p>
+      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">undefined</code> when setting
+  </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1493,10 +1483,10 @@ npm run dev</code></pre>
   </table>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Example</strong> <em itemscope=""
-      itemtype="http://schema.stenci.la/Emphasis">(Set the text content)</em> ```js</p>
+      itemtype="http://schema.stenci.la/Emphasis">(Set the text content)</em>```js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">text(elem, &quot;text content&quot;)
     <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">**Example** *(Get the text
-      content)*</code>js</p>
+      content)* </code>js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">text(elem) // &quot;text
     content&quot; ``` <a href="#" itemscope="" itemtype="http://schema.stenci.la/Link"></a></p>
   <h4 itemscope="" itemtype="http://schema.stenci.la/Heading" id="appendtarget-elems">append(target,
@@ -1504,7 +1494,7 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Append new child elements to an
     element.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function</p>
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1533,9 +1523,9 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Prepend new child elements to an
     element.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Detail</strong>: When called with multiple elements
-    to prepend will maintain the order of those elements (at the top of the target element).</p>
+    to prepend will maintain the order of those elements (at the top of the target element). </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1564,7 +1554,7 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Insert new elements before an
     element.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function</p>
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1594,7 +1584,7 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Insert new elements after an element.
   </p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function</p>
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1624,7 +1614,7 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Replace an element with a new
     element.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function</p>
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1654,9 +1644,9 @@ npm run dev</code></pre>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Wrap an element with a new element.
   </p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function <strong itemscope=""
+      itemtype="http://schema.stenci.la/Strong">Kind</strong>: global function<strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Detail</strong>: This function can be useful if you
-    need to create a container element to more easily style a type of element.</p>
+    need to create a container element to more easily style a type of element. </p>
   <table itemscope="" itemtype="http://schema.org/Table">
     <tbody>
       <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -1675,8 +1665,8 @@ npm run dev</code></pre>
   </table>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
       itemtype="http://schema.stenci.la/Strong">Example</strong> <em itemscope=""
-      itemtype="http://schema.stenci.la/Emphasis">(Wrap all figure captions in a &lt;div&gt;)</em>
-    ```js</p>
+      itemtype="http://schema.stenci.la/Emphasis">(Wrap all figure captions in a
+      &lt;div&gt;)</em>```js</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">select(&#39;:--Figure
     :--caption&#39;) .forEach(caption =&gt; wrap(caption, create(&#39;div&#39;))) ```</p>
 </article>
