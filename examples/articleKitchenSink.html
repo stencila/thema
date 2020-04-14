@@ -274,12 +274,14 @@ def beep():
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="code-chunks">Code chunks</h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A code chunk can have varying number
     and types of outputs e.g.</p>
-  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk">
+  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk"
+    data-programminglanguage="javascript">
     <pre class="language-javascript" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
       slot="text"><code>// No output
 const x = 42</code></pre>
   </stencila-code-chunk>
-  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk">
+  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk"
+    data-programminglanguage="python">
     <pre class="language-python" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
       slot="text"><code># String output
 &#39;Hello world&#39;</code></pre>
@@ -287,7 +289,8 @@ const x = 42</code></pre>
       <pre><output>Hello world</output></pre>
     </figure>
   </stencila-code-chunk>
-  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk">
+  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk"
+    data-programminglanguage="r">
     <pre class="language-r" itemscope="" itemtype="http://schema.stenci.la/CodeBlock" slot="text"><code># Datatable output
 head(mtcars)</code></pre>
     <figure slot="outputs">
@@ -392,13 +395,15 @@ head(mtcars)</code></pre>
       </div>
     </figure>
   </stencila-code-chunk>
-  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk">
+  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk"
+    data-programminglanguage="r">
     <pre class="language-r" itemscope="" itemtype="http://schema.stenci.la/CodeBlock" slot="text"><code># ImageObject output
  plot(sin(seq(0,4, 0.01)))</code></pre>
     <figure slot="outputs"><img src="/thema/examples/articleKitchenSink.html.media/0" alt="" itemscope=""
         itemtype="http://schema.org/ImageObject"></figure>
   </stencila-code-chunk>
-  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk">
+  <stencila-code-chunk itemscope="" itemtype="http://schema.stenci.la/CodeChunk"
+    data-programminglanguage="python">
     <pre class="language-python" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
       slot="text"><code># A number, a string, an array
 42
