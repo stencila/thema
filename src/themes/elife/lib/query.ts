@@ -7,6 +7,7 @@ export interface articleData {
   pdf: string
   figuresPdf?: string
   copyright: { license: string }
+  type: 'replication-study' | 'research-article'
 }
 
 export default async function (

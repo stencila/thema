@@ -1,5 +1,6 @@
 import { first, ready, select } from '../../util'
 import * as contentHeader from './lib/contentHeader'
+import * as contentHeaderMeta from './lib/contentHeaderMeta'
 import * as dateFormatter from './lib/dateFormatter'
 import * as dataProvider from './lib/dataProvider'
 import * as downloads from './lib/downloads'
@@ -28,6 +29,7 @@ ready((): void => {
 
   try {
     dateFormatter.format(first(':--datePublished'))
+    contentHeaderMeta.build()
     socialSharers.build(articleTitle, dataProvider.getArticleDoi())
     referenceFormatter.format(select(':--reference'))
   } catch (e) {
