@@ -5,6 +5,7 @@ import * as dataProvider from './lib/dataProvider'
 import * as downloads from './lib/downloads'
 import * as icons from './lib/icons'
 import * as socialSharers from './lib/socialSharers'
+import * as subjects from './lib/subjects'
 import * as referenceFormatter from './lib/referencesFormatter'
 import query from './lib/query'
 
@@ -14,7 +15,9 @@ ready((): void => {
   const contentHeaderElement = contentHeader.build() as Element
   query(articleId, window.fetch)
     .then((response) => {
+      console.log(response.article)
       icons.build(contentHeaderElement, response.article)
+      subjects.build(contentHeaderElement, response.article)
       downloads.build(
         contentHeaderElement,
         articleTitle,

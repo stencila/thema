@@ -3,10 +3,16 @@ interface Response {
   article: articleData
 }
 
+export interface subjectArea {
+  id: string
+  name: string
+}
+
 export interface articleData {
   pdf: string
   figuresPdf?: string
   copyright: { license: string }
+  subjects: subjectArea[]
 }
 
 export default async function (

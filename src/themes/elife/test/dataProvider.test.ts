@@ -31,8 +31,14 @@ describe('data Provider ', () => {
       pdf: 'theArticlePdfUri',
       figuresPdf: 'theFiguresPdfUri',
       copyright: {
-        license: 'thCopyrightLicense',
+        license: 'theCopyrightLicense',
       },
+      subjects: [
+        {
+          id: 'theSubjectId',
+          name: 'theSubjectName',
+        },
+      ],
     }
   })
 
@@ -56,8 +62,14 @@ describe('data Provider ', () => {
         dataProvider.getFiguresPdfUrl({
           pdf: 'theArticlePdfUri',
           copyright: {
-            license: 'thCopyrightLicense',
+            license: 'theCopyrightLicense',
           },
+          subjects: [
+            {
+              id: 'theSubjectId',
+              name: 'theSubjectName',
+            },
+          ],
         })
       ).toEqual('')
     })
@@ -66,7 +78,7 @@ describe('data Provider ', () => {
   describe('getCopyrightLicense', () => {
     it('returns the expected copyright license', () => {
       expect(dataProvider.getCopyrightLicense(mockArticle)).toEqual(
-        'thCopyrightLicense'
+        'theCopyrightLicense'
       )
     })
   })
