@@ -28,6 +28,7 @@ describe('data Provider ', () => {
 
   beforeEach(() => {
     mockArticle = {
+      type: 'research-article',
       pdf: 'theArticlePdfUri',
       figuresPdf: 'theFiguresPdfUri',
       copyright: {
@@ -37,6 +38,12 @@ describe('data Provider ', () => {
   })
 
   afterEach(resetDom)
+
+  describe('getType', () => {
+    it('returns the expected article type', () => {
+      expect(dataProvider.getType(mockArticle)).toEqual('research-article')
+    })
+  })
 
   describe("getting PDF URLs for an article's id", () => {
     it('getArticlePdfUrl() requests the article PDF URL for the id', () => {
@@ -54,6 +61,7 @@ describe('data Provider ', () => {
     it('may not have a figures pdf', () => {
       expect(
         dataProvider.getFiguresPdfUrl({
+          type: 'research-article',
           pdf: 'theArticlePdfUri',
           copyright: {
             license: 'thCopyrightLicense',

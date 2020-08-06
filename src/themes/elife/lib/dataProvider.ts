@@ -1,5 +1,5 @@
 import { first, text } from '../../../util'
-import { articleData } from './query'
+import { articleData, articleType } from './query'
 
 const normaliseWhitespace = (txt: string): string => {
   return txt.replace(/\n/, ' ').replace(/ \s+|\n+/g, ' ')
@@ -54,3 +54,5 @@ export const getFiguresPdfUrl = (article: articleData): string =>
 
 export const getCopyrightLicense = (article: articleData): string =>
   article.copyright.license
+
+export const getType = (article: articleData): articleType => article.type

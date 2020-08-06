@@ -3,11 +3,13 @@ interface Response {
   article: articleData
 }
 
+export type articleType = 'replication-study' | 'research-article'
+
 export interface articleData {
   pdf: string
   figuresPdf?: string
   copyright: { license: string }
-  type: 'replication-study' | 'research-article'
+  type: articleType
 }
 
 export default async function (

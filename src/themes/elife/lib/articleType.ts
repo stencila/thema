@@ -1,28 +1,15 @@
-import { before, create, first } from '../../../util'
+import { create, prepend } from '../../../util'
+import { getType } from './dataProvider'
+import { articleType, articleData } from './query'
 
-const articleTypeTitle = (type: string): string => {
-  switch (type) {
-    case 'replication-study':
-      return 'Replication Study'
-    case 'research-article':
-    default:
-      return 'Research Article'
-  }
-}
+const articleTypes = new Map([
+  ['research-article', 'Research Article'],
+  ['replication-study', 'Replication Study'],
+])
 
-export const build = (type: string, attachBefore?: Element | null): Element => {
-  let attachPoint: Element | null = first(':--datePublished')
-  if (attachBefore !== undefined) {
-    attachPoint = attachBefore
-  }
-
-  if (attachPoint === null) {
-    throw new Error("Can't find element to bolt the article type above")
-  }
-
-  const wrapper = create(
-    'div',
-    { class: 'meta' },
+const buildMenu = (contentHeaderMeta: Element, type: articleType): void => {
+  prepend(
+    contentHeaderMeta,
     create(
       'a',
       {
@@ -30,10 +17,18 @@ export const build = (type: string, attachBefore?: Element | null): Element => {
         target: '_parent',
         class: 'meta__type',
       },
-      articleTypeTitle(type)
-    ),
-    create('span', { class: 'date' }, attachPoint.cloneNode() as Element)
+      articleTypes.get(type)
+    )
   )
-  before(attachPoint, wrapper)
-  return wrapper
+}
+
+export const build = (
+  contentHeaderMeta: Element,
+  article: articleData
+): void => {
+  try {
+    buildMenu(contentHeaderMeta, getType(article))
+  } catch (err) {
+    console.error(err)
+  }
 }

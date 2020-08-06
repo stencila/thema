@@ -1,4 +1,5 @@
 import { first, ready, select } from '../../util'
+import * as articleType from './lib/articleType'
 import * as contentHeader from './lib/contentHeader'
 import * as contentHeaderMeta from './lib/contentHeaderMeta'
 import * as dateFormatter from './lib/dateFormatter'
@@ -13,6 +14,7 @@ ready((): void => {
   const articleId = dataProvider.getArticleId()
   const articleTitle = dataProvider.getArticleTitle()
   const contentHeaderElement = contentHeader.build() as Element
+  const contentHeaderMetaElement = contentHeaderMeta.build() as Element
   query(articleId, window.fetch)
     .then((response) => {
       icons.build(contentHeaderElement, response.article)
@@ -22,6 +24,7 @@ ready((): void => {
         articleId,
         response.article
       )
+      articleType.build(contentHeaderMetaElement, response.article)
     })
     .catch((e) => {
       console.log(e)
@@ -29,7 +32,6 @@ ready((): void => {
 
   try {
     dateFormatter.format(first(':--datePublished'))
-    contentHeaderMeta.build()
     socialSharers.build(articleTitle, dataProvider.getArticleDoi())
     referenceFormatter.format(select(':--reference'))
   } catch (e) {
