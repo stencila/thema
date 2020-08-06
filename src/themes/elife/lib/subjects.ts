@@ -18,7 +18,26 @@ const buildMenu = (contentHeader: Element, subjects: subjectArea[]): void => {
             class: 'content-header__subject_link',
             target: '_parent',
           },
-          subject.name
+          create('span', { class: 'content-header__subject' }, subject.name)
+        )
+      )
+    )
+  })
+
+  subjects.forEach((subject) => {
+    append(
+      subjectList,
+      create(
+        'li',
+        { class: 'content-header__subject_list_item' },
+        create(
+          'a',
+          {
+            href: `https://elifesciences.org/subjects/${subject.id}`,
+            class: 'content-header__subject_link',
+            target: '_parent',
+          },
+          create('span', { class: 'content-header__subject' }, subject.name)
         )
       )
     )
