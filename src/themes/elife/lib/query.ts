@@ -3,7 +3,14 @@ interface Response {
   article: articleData
 }
 
-export type articleType = 'replication-study' | 'research-article'
+export type articleType =
+  | 'registered-report'
+  | 'replication-study'
+  | 'research-advance'
+  | 'research-article'
+  | 'research-communication'
+  | 'short-report'
+  | 'tools-resources'
 
 export interface articleData {
   pdf: string

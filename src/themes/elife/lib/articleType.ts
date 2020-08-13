@@ -3,8 +3,13 @@ import { getType } from './dataProvider'
 import { articleType, articleData } from './query'
 
 const articleTypes = new Map([
-  ['research-article', 'Research Article'],
+  ['registered-report', 'Registered Report'],
   ['replication-study', 'Replication Study'],
+  ['research-advance', 'Research Advance'],
+  ['research-article', 'Research Article'],
+  ['research-communication', 'Research Communication'],
+  ['short-report', 'Short Report'],
+  ['tools-resources', 'Tools and Resources'],
 ])
 
 const buildMenu = (contentHeaderMeta: Element, type: articleType): void => {
