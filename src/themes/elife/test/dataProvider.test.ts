@@ -83,6 +83,17 @@ describe('data Provider ', () => {
     })
   })
 
+  describe('getSubjects', () => {
+    it('returns the expected subjects', () => {
+      expect(dataProvider.getSubjects(mockArticle)).toEqual([
+        {
+          id: 'theSubjectId',
+          name: 'theSubjectName',
+        },
+      ])
+    })
+  })
+
   describe('getArticleDoi', () => {
     it('it returns the expected DOI', () => {
       const mockData = '10.7554/eLife.30274'
