@@ -68,6 +68,42 @@ describe('query', () => {
     })
   })
 
+  it('it exposes the subjects', async () => {
+    const fetchMock = (): Promise<Response> =>
+      Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            subjects: [
+              {
+                id: 'biochemistry-chemical-biology',
+                name: 'Biochemistry and Chemical Biology',
+              },
+              {
+                id: 'cancer-biology',
+                name: 'Cancer Biology',
+              },
+            ],
+          }),
+      })
+    // @ts-expect-error
+    await expect(query('someId', fetchMock)).resolves.toEqual({
+      article: {
+        subjects: [
+          {
+            id: 'biochemistry-chemical-biology',
+            name: 'Biochemistry and Chemical Biology',
+          },
+          {
+            id: 'cancer-biology',
+            name: 'Cancer Biology',
+          },
+        ],
+      },
+      ok: true,
+    })
+  })
+
   describe('being given an invalid article id', () => {
     it('throws an ReferenceError', async () => {
       const fetchMock = (): Promise<Response> =>
