@@ -1,0 +1,103 @@
+name: Build
+
+on:
+  pull_request:
+    branches: '*'
+  push:
+    branches:
+      - master
+
+env:
+  CI: true
+
+jobs:
+  build:
+    # Ignore commits with `[skip ci]`
+    if: contains(github.event.head_commit.message, '[skip ci]') != true
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Restore NPM cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+
+      - name: Check themes
+        run: npm run check:themes
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test:unit -- --coverage
+
+      # If SauceLabs variables are defined, build docs and run visual regression tests
+      - name: Run visual regression tests
+        if: env.SAUCE_ACCESS_KEY != null
+        uses: ianwalter/puppeteer-container@v4.0.0
+        with:
+          args: npm run docs && npm run test:visual
+        env:
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+      - name: Build package
+        run: npm run build
+
+      - name: Upload Test Coverage
+        run: bash <(curl -s https://codecov.io/bash)
+
+      - name: Upload Visual Regression screenshots
+        if: env.ARGOS_TOKEN != null
+        run: argos upload test/screenshots/local -T "$ARGOS_TOKEN"
+        env:
+          ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
+
+      # Prepare environment for publishing if running on main branch
+      - name: Configure services
+        if: success() && (github.ref == 'refs/heads/master')
+        run: |
+          git config --global user.email "$GIT_AUTHOR_EMAIL"
+          git config --global user.name "$GIT_AUTHOR_NAME"
+          git remote set-url origin "https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" > /dev/null 2>&1
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc 2> /dev/null
+        env:
+          GIT_AUTHOR_EMAIL: ${{ secrets.GIT_AUTHOR_EMAIL }}
+          GIT_AUTHOR_NAME: ${{ secrets.GIT_AUTHOR_NAME }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build documentation
+        if: success() && (github.ref == 'refs/heads/master')
+        run: ASSET_PATH=/thema/ npm run docs
+
+      # Publish packages if running on main branch
+      - name: Publish package
+        if: success() && (github.ref == 'refs/heads/master')
+        run: npx semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Publish documentation to Github Pages
+      - name: Deploy to GitHub Pages
+        if: success() && (github.ref == 'refs/heads/master')
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          build_dir: docs
+          committer: ${{ secrets.GIT_AUTHOR_NAME }} <${{ secrets.GIT_AUTHOR_EMAIL }}>
+          author: ${{ secrets.GIT_AUTHOR_NAME }} <${{ secrets.GIT_AUTHOR_EMAIL }}>
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
