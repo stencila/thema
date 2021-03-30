@@ -56,11 +56,16 @@
   <section data-itemprop="description">
     <h2 data-itemtype="http://schema.stenci.la/Heading">Abstract</h2>
     <meta itemprop="description"
-      content="A short description of the article. Also known as an abstract. This description includes not just string content, but other content nodes as well, for example, a inline math fragment: tex E = m c^2. Some of the article meta-data for this example is taken from this article">
-    <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A short description of the article.
-      Also known as an <em itemscope="" itemtype="http://schema.stenci.la/Emphasis">abstract</em>.
-      This description includes not just string content, but other content nodes as well, for
-      example, a inline math fragment: <span itemscope=""
+      content="This is our &quot;kitchen sink&quot; example which we use when developing, demoing, and testing themes. It is intended to include examples of most of the types of elements in a Stencila document (whilst staying relatively brief). This abstract can include not just string content, but other content types as well, for example, emphasized text, an inline math fragment: tex E = m c^2. Some of the article meta-data for this example is taken from this article">
+    <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This is our &quot;kitchen
+      sink&quot; example which we use when developing, <a href="https://stencila.github.io/thema/"
+        itemscope="" itemtype="http://schema.stenci.la/Link">demoing</a>, and <a
+        href="https://percy.io/01dadd16/Thema/" itemscope=""
+        itemtype="http://schema.stenci.la/Link">testing</a> themes. It is intended to include
+      examples of most of the types of elements in a Stencila document (whilst staying relatively
+      brief). This abstract can include not just string content, but other content types as well,
+      for example, <em itemscope="" itemtype="http://schema.stenci.la/Emphasis">emphasized
+        text</em>, an inline math fragment: <span itemscope=""
         itemtype="http://schema.stenci.la/MathFragment"><span class="mjx-chtml"><span
             class="mjx-math" aria-label="E = m c^2"><span class="mjx-mrow" aria-hidden="true"><span
                 class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I"
@@ -93,6 +98,15 @@
     vitae velit perferendis quas perspiciatis corrupti.</p>
   <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="inline-content">Inline content
   </h2>
+  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="primitive-types">Primitive types
+  </h3>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The JSON primitives are valid inline
+    content. This includes: <span data-itemtype="http://schema.stenci.la/Null">null</span> and <span
+      data-itemtype="http://schema.org/Boolean">true</span> and <span
+      data-itemtype="http://schema.org/Boolean">false</span> and numbers like <span
+      data-itemtype="http://schema.org/Number">42</span> and <span
+      data-itemtype="http://schema.org/Number">3.14</span>, as well as plain old strings like this
+    one.</p>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="mark-types">Mark types</h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The are several types of mark: <em
       itemscope="" itemtype="http://schema.stenci.la/Emphasis">emphasis</em> and <strong
@@ -101,6 +115,50 @@
       itemscope="" itemtype="http://schema.stenci.la/Quote">quoted content</q> and <sub itemscope=""
       itemtype="http://schema.stenci.la/Subscript">subscripted</sub> content and <sup itemscope=""
       itemtype="http://schema.stenci.la/Superscript">superscripted</sup> content.</p>
+  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="citation-types">Citation types
+  </h3>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Citations have a &#39;mode&#39; which
+    defaults to &#39;Parenthetical&#39;, for example, <cite itemscope=""
+      itemtype="http://schema.stenci.la/Cite"><a href="#bib1"><span>1</span><span>Alvarez and
+          Fyffe</span><span>2007</span></a></cite> and <cite itemscope=""
+      itemtype="http://schema.stenci.la/Cite"><a href="#bib2"><span>2</span><span>Asahina et
+          al.</span><span>2014</span></a></cite> and <cite itemscope=""
+      itemtype="http://schema.stenci.la/Cite"><a href="#bib3"><span>3</span><span>Baines et
+          al.</span><span>2001</span></a></cite>; can be &#39;Narrative&#39; <cite itemscope=""
+      itemtype="http://schema.stenci.la/Cite" data-citationmode="Narrative"><a
+        href="#bib1"><span>1</span><span>Alvarez and Fyffe</span><span>2007</span></a></cite>; can
+    be &#39;NarrativeAuthor&#39; (only show author/s) <cite itemscope=""
+      itemtype="http://schema.stenci.la/Cite" data-citationmode="NarrativeAuthor"><a
+        href="#bib1"><span>1</span><span>Alvarez and Fyffe</span><span>2007</span></a></cite>; can
+    be &#39;NarrativeYear&#39; (only show year) <cite itemscope=""
+      itemtype="http://schema.stenci.la/Cite" data-citationmode="NarrativeYear"><a
+        href="#bib1"><span>1</span><span>Alvarez and Fyffe</span><span>2007</span></a></cite>.</p>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Citations can also have a prefix
+    <cite itemscope="" itemtype="http://schema.stenci.la/Cite"><span
+        data-itemprop="citationPrefix">e.g.</span><a href="#bib1"><span>1</span><span>Alvarez and
+          Fyffe</span><span>2007</span></a></cite>, a suffix <cite itemscope=""
+      itemtype="http://schema.stenci.la/Cite"><a href="#bib1"><span>1</span><span>Alvarez and
+          Fyffe</span><span>2007</span></a><span data-itemprop="citationSuffix">p. 21</span></cite>,
+    or both <cite itemscope="" itemtype="http://schema.stenci.la/Cite"><span
+        data-itemprop="citationPrefix">e.g.</span><a href="#bib1"><span>1</span><span>Alvarez and
+          Fyffe</span><span>2007</span></a><span data-itemprop="citationSuffix">p. 42</span></cite>.
+    They can also have &#39;content&#39; (which overrides prefix, suffix, author, year) <cite
+      itemscope="" itemtype="http://schema.stenci.la/Cite"><a href="#bib1">as published by us in
+        twenty-oh-seven</a></cite>.</p>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Citations can be grouped like <span
+      itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#bib1"><span>1</span><span>Alvarez and
+            Fyffe</span><span>2007</span></a></cite><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#bib2"><span>2</span><span>Asahina et
+            al.</span><span>2014</span></a></cite></span> and <span itemscope=""
+      itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#bib1"><span>1</span><span>Alvarez and
+            Fyffe</span><span>2007</span></a></cite><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#bib2"><span>2</span><span>Asahina et
+            al.</span><span>2014</span></a></cite><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#bib3"><span>3</span><span>Baines et
+            al.</span><span>2001</span></a></cite></span> in which case themes will usually place
+    parentheses or brackets around the group, and commas or semicolons between them.</p>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="other-types">Other types</h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Other inline content includes: links
     <a href="https://stencila.github.io/thema/" itemscope=""
@@ -176,15 +234,6 @@
                     class="mjx-line"></span></span><span
                   style="height: 2.416em; vertical-align: -0.766em;"
                   class="mjx-vsize"></span></span></span></span></span></span></span></span>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="primitive-types">Primitive types
-  </h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The JSON primitives are valid inline
-    content. This includes: <span data-itemtype="http://schema.stenci.la/Null">null</span> and <span
-      data-itemtype="http://schema.org/Boolean">true</span> and <span
-      data-itemtype="http://schema.org/Boolean">false</span> and numbers like <span
-      data-itemtype="http://schema.org/Number">42</span> and <span
-      data-itemtype="http://schema.org/Number">3.14</span>, as well as plain old strings like this
-    one.</p>
   <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="headings">Headings</h2>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Headings with depth 1 to 6:</p>
   <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="heading-one">Heading one</h2>

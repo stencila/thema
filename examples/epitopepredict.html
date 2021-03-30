@@ -59,19 +59,19 @@
     for both class I and II and have been comprehensively reviewed <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref1"><span>1</span><span>Lundegaard et
-            al., 2010</span></a></cite></span>⁠. Currently the most effective are machine learning
-    (ML) based approaches which are trained on existing binding affinity data for a given MHC
-    molecule. To do this the peptide sequence is encoded and these features fit against the known
-    affinity. To date artificial neural networks (ANN) preform better at this task than other models
-    such as linear regression. This is likely because the hidden layers in such networks are better
-    able to account for the contribution of intrapeptide residue-residue interactions to the binding
-    affinity. All methods vary in accuracy over MHC alleles depending on the availability of quality
-    datasets. Pan-allele tools have been developed to deal with this issue <span itemscope=""
-      itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+            al.</span><span>2010</span></a></cite></span>⁠. Currently the most effective are machine
+    learning (ML) based approaches which are trained on existing binding affinity data for a given
+    MHC molecule. To do this the peptide sequence is encoded and these features fit against the
+    known affinity. To date artificial neural networks (ANN) preform better at this task than other
+    models such as linear regression. This is likely because the hidden layers in such networks are
+    better able to account for the contribution of intrapeptide residue-residue interactions to the
+    binding affinity. All methods vary in accuracy over MHC alleles depending on the availability of
+    quality datasets. Pan-allele tools have been developed to deal with this issue <span
+      itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref2"><span>2</span><span>Backert and
-            Kohlbacher, 2015</span></a></cite></span>⁠. These approaches can impute affinities for
-    unknown alleles on the basis of neighboring MHC with the highest sequence similarity and which
-    have sufficient training data.</p>
+            Kohlbacher</span><span>2015</span></a></cite></span>⁠. These approaches can impute
+    affinities for unknown alleles on the basis of neighboring MHC with the highest sequence
+    similarity and which have sufficient training data.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">By convention, selection of peptides
     is done using an arbitrary score threshold. For affinities, a threshold value of 500nM is
     considered a binder and 50nM a strong binder. The algorithms perform best at this classification
@@ -79,17 +79,18 @@
     approaches: the effect of the most dominant features is penalized intentionally to achieve
     better generalization on blind test data <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
-        itemtype="http://schema.stenci.la/Cite"><a href="#ref3"><span>3</span><span>Domingos,
-            2012</span></a></cite></span>⁠. Another source of the inaccuracy is the loss of
-    sensitivity of experimental assays at either very high or low binding affinity regimes. As a
-    consequence, epitope candidates for subsequent experimental validation selected by ranking the
-    affinities may not necessarily be the best approach. Percentage ranking is now often the
-    recommended method <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite
-        itemscope="" itemtype="http://schema.stenci.la/Cite"><a
-          href="#ref4"><span>4</span><span>Chaves et al., 2012</span></a></cite></span>⁠. However
-    the exact approach probably depends on the study in question. For example, searching a small
-    number of proteins might mean taking the top ranked percentile from each sequence regardless of
-    score. Threshold selection is discussed later in the examples.</p>
+        itemtype="http://schema.stenci.la/Cite"><a
+          href="#ref3"><span>3</span><span>Domingos</span><span>2012</span></a></cite></span>⁠.
+    Another source of the inaccuracy is the loss of sensitivity of experimental assays at either
+    very high or low binding affinity regimes. As a consequence, epitope candidates for subsequent
+    experimental validation selected by ranking the affinities may not necessarily be the best
+    approach. Percentage ranking is now often the recommended method <span itemscope=""
+      itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#ref4"><span>4</span><span>Chaves et
+            al.</span><span>2012</span></a></cite></span>⁠. However the exact approach probably
+    depends on the study in question. For example, searching a small number of proteins might mean
+    taking the top ranked percentile from each sequence regardless of score. Threshold selection is
+    discussed later in the examples.</p>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="strategies-for-epitope-selection">
     Strategies for epitope selection</h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A typical approach to binder
@@ -101,17 +102,17 @@
     entire proteome, similar to that used by Bremel et al. <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref5"><span>5</span><span>Bremel and
-            Homan, 2010</span></a></cite></span>⁠ and others, by setting a global cut-off based on
-    the top percentage of scores from the entire proteome. In addition, some alleles have a
+            Homan</span><span>2010</span></a></cite></span>⁠ and others, by setting a global cut-off
+    based on the top percentage of scores from the entire proteome. In addition, some alleles have a
     significantly higher score distribution and will dominate the results if a uniform score cut-off
     is applied; this applies in general to MHC binding predictors. Thus separate global cut-off per
     allele so that low scoring alleles would be better represented is also advisable. This approach
     is consistent with recent work by Paul et al. <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
-        itemtype="http://schema.stenci.la/Cite"><a href="#ref6"><span>6</span><span>Paul et al.,
-            2013</span></a></cite></span>⁠ regarding allele-specific thresholds in MHC-I prediction.
-    Three alternative such threshold strategies are provided in this library and discussed below.
-  </p>
+        itemtype="http://schema.stenci.la/Cite"><a href="#ref6"><span>6</span><span>Paul et
+            al.</span><span>2013</span></a></cite></span>⁠ regarding allele-specific thresholds in
+    MHC-I prediction. Three alternative such threshold strategies are provided in this library and
+    discussed below.</p>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="binding-promiscuity">Binding
     promiscuity</h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Promiscuous MHC binders are defined
@@ -132,15 +133,16 @@
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There are several computational
     pipelines that help a researcher to do epitope prediction <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
-        itemtype="http://schema.stenci.la/Cite"><a href="#ref7"><span>7</span><span>Schubert et al.,
-            2013</span></a></cite><cite itemscope="" itemtype="http://schema.stenci.la/Cite"><a
-          href="#ref8"><span>8</span><span>Soria-Guerra et al., 2015</span></a></cite></span>⁠⁠.
-    Other commercial desktop software applications for epitope discovery are EpiMatrix <span
-      itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#ref7"><span>7</span><span>Schubert et
+            al.</span><span>2013</span></a></cite><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#ref8"><span>8</span><span>Soria-Guerra et
+            al.</span><span>2015</span></a></cite></span>⁠⁠. Other commercial desktop software
+    applications for epitope discovery are EpiMatrix <span itemscope=""
+      itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref9"><span>9</span><span>De Groot and
-            Martin, 2009</span></a></cite></span>⁠. Commercial tools may be of high quality but are
-    neither free nor open source, raising issues of reproducibility for academics. Therefore there
-    is a limited choice for users in readily available and easy to use tools.</p>
+            Martin</span><span>2009</span></a></cite></span>⁠. Commercial tools may be of high
+    quality but are neither free nor open source, raising issues of reproducibility for academics.
+    Therefore there is a limited choice for users in readily available and easy to use tools.</p>
   <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="implementation">Implementation
   </h2>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This software is implemented entirely
@@ -154,8 +156,9 @@
     a new prediction method in a relatively straightforward and consistent manner. The prediction
     methods always return a Pandas DataFrame <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
-        itemtype="http://schema.stenci.la/Cite"><a href="#ref10"><span>10</span><span>Nelli,
-            2015</span></a></cite></span>⁠ in a standard format. The <em itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a
+          href="#ref10"><span>10</span><span>Nelli</span><span>2015</span></a></cite></span>⁠ in a
+    standard format. The <em itemscope=""
       itemtype="http://schema.stenci.la/Emphasis">predict_sequences</em> method is used for multiple
     protein sequences and can be run in parallel. This can take a GenBank or fasta file as input.
     For large numbers of sequences the prediction function should be called with save=True so that
@@ -167,8 +170,9 @@
     Tornado <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref11"><span>11</span></a></cite></span>⁠
     using the Bokeh <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite
-        itemscope="" itemtype="http://schema.stenci.la/Cite"><a href="#ref12"><span>12</span><span>,
-            2010</span></a></cite></span>⁠ visualization library for making interactive plots.</p>
+        itemscope="" itemtype="http://schema.stenci.la/Cite"><a
+          href="#ref12"><span>12</span><span></span><span>2010</span></a></cite></span>⁠
+    visualization library for making interactive plots.</p>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading"
     id="supported-mhc-binding-prediction-tools">Supported MHC binding prediction tools</h3>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The following MHC binding prediction
@@ -184,15 +188,16 @@
       <meta itemprop="url" content="#1">TEPITOPEpan <span itemscope=""
         itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
           itemtype="http://schema.stenci.la/Cite"><a href="#ref13"><span>13</span><span>Zhang et
-              al., 2012</span></a></cite></span>⁠ is a position specific scoring matrix (PSSM) based
-      algorithm. It uses 11 scoring matrices derived from combinatorial competitive binding assays
-      on 11 HLA-DR alleles <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite
-          itemscope="" itemtype="http://schema.stenci.la/Cite"><a
-            href="#ref14"><span>14</span><span>Sturniolo et al., 1999</span></a></cite></span>⁠.
-      This method is pan specific and covers 700 HLA-DR molecules with unknown binding specificities
-      based on pocket similarity to the original set of 11 library sequences. We have implemented
-      this algorithm as a Python module, thus it comes with the package. It is fast but not as
-      accurate in benchmarks as netMHCIIpan with less alleles covered.
+              al.</span><span>2012</span></a></cite></span>⁠ is a position specific scoring matrix
+      (PSSM) based algorithm. It uses 11 scoring matrices derived from combinatorial competitive
+      binding assays on 11 HLA-DR alleles <span itemscope=""
+        itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+          itemtype="http://schema.stenci.la/Cite"><a href="#ref14"><span>14</span><span>Sturniolo et
+              al.</span><span>1999</span></a></cite></span>⁠. This method is pan specific and covers
+      700 HLA-DR molecules with unknown binding specificities based on pocket similarity to the
+      original set of 11 library sequences. We have implemented this algorithm as a Python module,
+      thus it comes with the package. It is fast but not as accurate in benchmarks as netMHCIIpan
+      with less alleles covered.
     </li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="2">
@@ -200,44 +205,45 @@
       prediction method further detailed below. It is implemented using the scikit-learn <span
         itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
           itemtype="http://schema.stenci.la/Cite"><a href="#ref15"><span>15</span><span>Abraham et
-              al., 2014</span></a></cite></span>⁠ package. It only covers 103 MHC-I alleles and
-      cannot currently be extrapolated to use with similar alleles (i.e. not pan specific) but
-      provides a convenient alternative to the external tools.
+              al.</span><span>2014</span></a></cite></span>⁠ package. It only covers 103 MHC-I
+      alleles and cannot currently be extrapolated to use with similar alleles (i.e. not pan
+      specific) but provides a convenient alternative to the external tools.
     </li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="3">
       <meta itemprop="url" content="#3">MHCflurry <span itemscope=""
         itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
           itemtype="http://schema.stenci.la/Cite"><a href="#ref16"><span>16</span><span>O'Donnell et
-              al., 2018</span></a></cite></span> is an MHC-I predictor also using ANNs trained on
-      affinity measurements. It currently covers 112 human alleles. This is an open source tool
-      available via pip and thus easy to install. It is recommended for MHC-I predictions unless
-      there are alleles not covered. The latest supported version is 2.0.1.
+              al.</span><span>2018</span></a></cite></span> is an MHC-I predictor also using ANNs
+      trained on affinity measurements. It currently covers 112 human alleles. This is an open
+      source tool available via pip and thus easy to install. It is recommended for MHC-I
+      predictions unless there are alleles not covered. The latest supported version is 2.0.1.
     </li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="4">
       <meta itemprop="url" content="#4">NetMHCpan <span itemscope=""
         itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
           itemtype="http://schema.stenci.la/Cite"><a href="#ref17"><span>17</span><span>Jurtz et
-              al., 2017</span></a></cite></span>⁠ is an artificial neural network algorithm covering
-      many human and animal MHC-I alleles. This is trained on both MS eluted ligand data and binding
-      affinity data. It therefore returns two properties: either the likelihood of a peptide
-      becoming a natural ligand, or the predicted binding affinity. Version 4.1 is currently
-      supported.
+              al.</span><span>2017</span></a></cite></span>⁠ is an artificial neural network
+      algorithm covering many human and animal MHC-I alleles. This is trained on both MS eluted
+      ligand data and binding affinity data. It therefore returns two properties: either the
+      likelihood of a peptide becoming a natural ligand, or the predicted binding affinity. Version
+      4.1 is currently supported.
     </li>
     <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
       <meta itemprop="position" content="5">
       <meta itemprop="url" content="#5">NetMHCIIpan <span itemscope=""
         itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
           itemtype="http://schema.stenci.la/Cite"><a href="#ref18"><span>18</span><span>Nielsen et
-              al., 2010</span></a></cite></span>⁠ is also an ANN, trained on binding data for
-      multiple MHC-II alleles. Predictions are now extended to all HLA-DR, DQ and DP known sequences
-      as from version 3.0 <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite
-          itemscope="" itemtype="http://schema.stenci.la/Cite"><a
-            href="#ref19"><span>19</span><span>Karosiene et al., 2013</span></a></cite></span>⁠.
-      Both this tool and netMHCpan have the broadest species support of any algorithms. They both
-      have good web interfaces but are covered by free non-commercial academic licenses and the
-      local versions must be installed separately. Version 3.0 is supported.
+              al.</span><span>2010</span></a></cite></span>⁠ is also an ANN, trained on binding data
+      for multiple MHC-II alleles. Predictions are now extended to all HLA-DR, DQ and DP known
+      sequences as from version 3.0 <span itemscope=""
+        itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+          itemtype="http://schema.stenci.la/Cite"><a href="#ref19"><span>19</span><span>Karosiene et
+              al.</span><span>2013</span></a></cite></span>⁠. Both this tool and netMHCpan have the
+      broadest species support of any algorithms. They both have good web interfaces but are covered
+      by free non-commercial academic licenses and the local versions must be installed separately.
+      Version 3.0 is supported.
     </li>
   </ul>
   <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="available-threshold-methods">
@@ -280,37 +286,38 @@
     kind. Several peptide encoding schemes were tested, including the NLF encoding scheme <span
       itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref20"><span>20</span><span>Nanni and
-            Lumini, 2011</span></a></cite></span>⁠, OETMAP <span itemscope=""
+            Lumini</span><span>2011</span></a></cite></span>⁠, OETMAP <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref21"><span>21</span><span>Gök and
-            Özcerit, 2011</span></a></cite></span>⁠, a Blosum62 matrix or a simple ‘one hot’
-    encoding method. One hot encoding was found to be adequate and the more complex schemes did not
-    appear to offer any significant advantage. This may require further testing. For now it is
+            Özcerit</span><span>2011</span></a></cite></span>⁠, a Blosum62 matrix or a simple ‘one
+    hot’ encoding method. One hot encoding was found to be adequate and the more complex schemes did
+    not appear to offer any significant advantage. This may require further testing. For now it is
     possible to instantiate and train the predictor with any of these encoders. The regression model
     used is the <em itemscope="" itemtype="http://schema.stenci.la/Emphasis">MLPRegressor</em> from
     sklearn, an implementation of a multilayer perceptron (MLP), a class of artificial neural
     network. The data used for training was primarily from the IEDB and was curated by the authors
     of MHCflurry <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref16"><span>16</span><span>O'Donnell et
-            al., 2018</span></a></cite></span>⁠ from various sources. The regression model must be
-    trained for each allele. When this is done the model is persisted with the joblib module and can
-    be re-loaded for new predictions for that allele. All of this functionality is encapsulated in
-    the <em itemscope="" itemtype="http://schema.stenci.la/Emphasis">BasicMHCIPredictor</em> class
-    in epitopepredict. The predictor only supports 103 alleles currently and is not pan specific as
-    of yet. This feature is still to be added.</p>
+            al.</span><span>2018</span></a></cite></span>⁠ from various sources. The regression
+    model must be trained for each allele. When this is done the model is persisted with the joblib
+    module and can be re-loaded for new predictions for that allele. All of this functionality is
+    encapsulated in the <em itemscope=""
+      itemtype="http://schema.stenci.la/Emphasis">BasicMHCIPredictor</em> class in epitopepredict.
+    The predictor only supports 103 alleles currently and is not pan specific as of yet. This
+    feature is still to be added.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To test performance, a separate
     evaluation set of peptides originally created by Kim et al. <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
-        itemtype="http://schema.stenci.la/Cite"><a href="#ref22"><span>22</span><span>Kim et al.,
-            2014</span></a></cite></span>⁠ was downloaded from the IEDB. The training set sequences
-    were subtracted from this leaving 25948 9-mer peptides. Only alleles for which there were more
-    than 200 peptides were evaluated to give a reasonable performance estimate. This left 40 HLA
-    alleles for testing. Both the Pearson correlation coefficient and the roc auc metric (with a
-    threshold of below 500nM set as a positive binder) were used as metrics. The results in Figure 1
-    show that our predictor gives similar performance to the others with this test set. It is not
-    meant to provide a definitive benchmark since these other tools have been more comprehensively
-    benchmarked elsewhere. In particular it can be hard to obtain a benchmark set of peptides that
-    has not been used for training in one or more of the models.</p>
+        itemtype="http://schema.stenci.la/Cite"><a href="#ref22"><span>22</span><span>Kim et
+            al.</span><span>2014</span></a></cite></span>⁠ was downloaded from the IEDB. The
+    training set sequences were subtracted from this leaving 25948 9-mer peptides. Only alleles for
+    which there were more than 200 peptides were evaluated to give a reasonable performance
+    estimate. This left 40 HLA alleles for testing. Both the Pearson correlation coefficient and the
+    roc auc metric (with a threshold of below 500nM set as a positive binder) were used as metrics.
+    The results in Figure 1 show that our predictor gives similar performance to the others with
+    this test set. It is not meant to provide a definitive benchmark since these other tools have
+    been more comprehensively benchmarked elsewhere. In particular it can be hard to obtain a
+    benchmark set of peptides that has not been used for training in one or more of the models.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">In practical use this predictor can
     be run directly from the API or command line without installing any other program. Models are
     trained once as needed for each allele/length combination using the current installed versions
@@ -347,13 +354,14 @@
     antigens in a healthy South African cohort <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref23"><span>23</span><span>Lindestam
-            Arlehamn et al., 2016</span></a></cite></span>⁠. The test data is available as
-    supplementary tables in that paper. It comprises 75 15-mer epitopes selected from a set of known
-    Mtb antigens. Here we perform a simple benchmark to find the percentage coverage of predicted
-    MHC-II binders in two predictors, netMHCIIpan and Tepitope, using the three threshold methods
-    for selecting promiscuous binders described above. These are then compared across a selection of
-    cut-offs that each yield a certain number of binders. Ideally we would want to produce as small
-    a number of predicted binders as possible to reduce the number to be experimentally tested.</p>
+            Arlehamn et al.</span><span>2016</span></a></cite></span>⁠. The test data is available
+    as supplementary tables in that paper. It comprises 75 15-mer epitopes selected from a set of
+    known Mtb antigens. Here we perform a simple benchmark to find the percentage coverage of
+    predicted MHC-II binders in two predictors, netMHCIIpan and Tepitope, using the three threshold
+    methods for selecting promiscuous binders described above. These are then compared across a
+    selection of cut-offs that each yield a certain number of binders. Ideally we would want to
+    produce as small a number of predicted binders as possible to reduce the number to be
+    experimentally tested.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The sequences of all 29 proteins
     represented in the target set where retrieved and split into 15-mers. Then predictions were made
     for each of the 27 alleles in the target population tested in the study. This produces a list of
@@ -387,29 +395,30 @@
     AF2122/97) for potential use in novel antigens for bovine tuberculosis <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref24"><span>24</span><span>Farrell et
-            al., 2016</span></a></cite></span>⁠. The results are documented in the paper. Briefly,
-    we performed binding predictions over the entire M. <em itemscope=""
+            al.</span><span>2016</span></a></cite></span>⁠. The results are documented in the paper.
+    Briefly, we performed binding predictions over the entire M. <em itemscope=""
       itemtype="http://schema.stenci.la/Emphasis">Bovis</em> proteome using two different binding
     predictors, netMHCIIpan <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite
         itemscope="" itemtype="http://schema.stenci.la/Cite"><a
-          href="#ref19"><span>19</span><span>Karosiene et al., 2013</span></a></cite></span>⁠,
-    Tepitope <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
-        itemtype="http://schema.stenci.la/Cite"><a href="#ref13"><span>13</span><span>Zhang et al.,
-            2012</span></a></cite></span>⁠. For each set of results we found only promiscuous
-    binders above an allele specific cutoff using the ‘global’ selection strategy. In addition
-    clusters of binders were detected to find areas of high binder density in each sequence. The
-    assumption underlying this method is that ~20mer peptides covering these regions will be more
-    likely to yield at least one true positive epitope and hence elicit a T-cell response. The
-    results are a set of clusters for both prediction methods, ranked by number of binders per unit
-    length. This has also been referred to as the ‘epitope density’ method <span itemscope=""
+          href="#ref19"><span>19</span><span>Karosiene et
+            al.</span><span>2013</span></a></cite></span>⁠, Tepitope <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
-        itemtype="http://schema.stenci.la/Cite"><a href="#ref25"><span>25</span><span>Santos et al.,
-            2013</span></a></cite></span>⁠. We further contrasted this cluster selection with the
-    more conventional ranking of top scoring binders. We also included random non high scoring
-    peptides as a control. 20-mer peptides derived from these sets were synthesized and tested for
-    IFN-γ responses in M.bovis naturally infected cattle. Approximately 24% out of 270 peptides had
-    high responses (using known epitopes as the baseline response). The random controls had no
-    responses above this threshold.</p>
+        itemtype="http://schema.stenci.la/Cite"><a href="#ref13"><span>13</span><span>Zhang et
+            al.</span><span>2012</span></a></cite></span>⁠. For each set of results we found only
+    promiscuous binders above an allele specific cutoff using the ‘global’ selection strategy. In
+    addition clusters of binders were detected to find areas of high binder density in each
+    sequence. The assumption underlying this method is that ~20mer peptides covering these regions
+    will be more likely to yield at least one true positive epitope and hence elicit a T-cell
+    response. The results are a set of clusters for both prediction methods, ranked by number of
+    binders per unit length. This has also been referred to as the ‘epitope density’ method <span
+      itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+        itemtype="http://schema.stenci.la/Cite"><a href="#ref25"><span>25</span><span>Santos et
+            al.</span><span>2013</span></a></cite></span>⁠. We further contrasted this cluster
+    selection with the more conventional ranking of top scoring binders. We also included random non
+    high scoring peptides as a control. 20-mer peptides derived from these sets were synthesized and
+    tested for IFN-γ responses in M.bovis naturally infected cattle. Approximately 24% out of 270
+    peptides had high responses (using known epitopes as the baseline response). The random controls
+    had no responses above this threshold.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This workflow was performed using an
     older version of this software. A newer and somewhat simplified form of the same analysis is now
     available as a notebook in the examples folder. Results from this output will be slightly
@@ -424,26 +433,26 @@
     antibody tests have often revealed lower than expected rates of seropositivity in populations
     where the virus has spread <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite
         itemscope="" itemtype="http://schema.stenci.la/Cite"><a
-          href="#ref26"><span>26</span><span>Doshi, 2020</span></a></cite></span>⁠. It is almost
-    certain that other components of the immune system are important in protecting individuals just
-    as in other infectious diseases. Robust innate immune responses are one candidate. Another
-    possibility is T cells. SARS-CoV-2 reactive CD4+ T cells have been reported in unexposed
-    individuals, suggesting pre-existing cross-reactive T cell memory in 20-50% of people <span
-      itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+          href="#ref26"><span>26</span><span>Doshi</span><span>2020</span></a></cite></span>⁠. It is
+    almost certain that other components of the immune system are important in protecting
+    individuals just as in other infectious diseases. Robust innate immune responses are one
+    candidate. Another possibility is T cells. SARS-CoV-2 reactive CD4+ T cells have been reported
+    in unexposed individuals, suggesting pre-existing cross-reactive T cell memory in 20-50% of
+    people <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref27"><span>27</span><span>Grifoni et
-            al., 2020</span></a></cite></span>⁠. It is possible these are memory T cells generated
-    from previous exposures to the human common cold coronaviruses (HCoVs) which circulate widely.
-  </p>
+            al.</span><span>2020</span></a></cite></span>⁠. It is possible these are memory T cells
+    generated from previous exposures to the human common cold coronaviruses (HCoVs) which circulate
+    widely.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Mateus et al. <span itemscope=""
       itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
-        itemtype="http://schema.stenci.la/Cite"><a href="#ref28"><span>28</span><span>Mateus et al.,
-            2020</span></a></cite></span>⁠ have identified such cross-reactive CD4+ epitopes by
-    generating 42 short term T cell lines specific to previously identified epitopes in PBMCs from
-    unexposed donors. Then homologs to these peptides in the HCoVs were tested against these cell
-    lines for a response. These tests were done in both unexposed and convalescent COVID19 patients.
-    Cross reactivity was found in 10/42 of the T cell lines. Responding cells in unexposed donors
-    were predominantly found in the effector memory CD4+ T cell population, though the consequences
-    of this for protective immunity are not yet known.</p>
+        itemtype="http://schema.stenci.la/Cite"><a href="#ref28"><span>28</span><span>Mateus et
+            al.</span><span>2020</span></a></cite></span>⁠ have identified such cross-reactive CD4+
+    epitopes by generating 42 short term T cell lines specific to previously identified epitopes in
+    PBMCs from unexposed donors. Then homologs to these peptides in the HCoVs were tested against
+    these cell lines for a response. These tests were done in both unexposed and convalescent
+    COVID19 patients. Cross reactivity was found in 10/42 of the T cell lines. Responding cells in
+    unexposed donors were predominantly found in the effector memory CD4+ T cell population, though
+    the consequences of this for protective immunity are not yet known.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Here we show how it’s possible to
     predict such potential cross-reactive CD4+ epitopes just using the sequences.</p>
   <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The method used is as follows:</p>
@@ -698,11 +707,11 @@ res = P.predict_peptides(seqs, alleles=&#39;HLA-A*01:01&#39;)</code></pre>
     made. This is an improved and much easier to use form of a previous web interface called
     epitopemap <span itemscope="" itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
         itemtype="http://schema.stenci.la/Cite"><a href="#ref29"><span>29</span><span>Farrell and
-            Gordon, 2015</span></a></cite></span>⁠ and replaces it. Widgets can be used to select
-    thresholds and the kind of plot shown. Currently two kinds of plots can be viewed, a sequence
-    view and one that shows the peptides as colored blocks in tracks along the sequence, as shown in
-    Figure 4. This web interface can be tested by running the test command above and then launching
-    the web app using the zaire_test folder as input.</p>
+            Gordon</span><span>2015</span></a></cite></span>⁠ and replaces it. Widgets can be used
+    to select thresholds and the kind of plot shown. Currently two kinds of plots can be viewed, a
+    sequence view and one that shows the peptides as colored blocks in tracks along the sequence, as
+    shown in Figure 4. This web interface can be tested by running the test command above and then
+    launching the web app using the zaire_test folder as input.</p>
   <figure itemscope="" itemtype="http://schema.stenci.la/Figure" title="Figure 4"><label
       data-itemprop="label">Figure 4</label><img src="epitopepredict.html.media/image4.png" title=""
       alt="" itemscope="" itemtype="http://schema.org/ImageObject">
