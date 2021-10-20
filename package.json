@@ -137,7 +137,7 @@
     "webdriverio": "7.3.0",
     "webpack": "5.28.0",
     "webpack-cli": "4.6.0",
-    "webpack-dev-server": "3.11.2"
+    "webpack-dev-server": "4.3.1"
   },
   "prettier": "@stencila/dev-config/prettier-config.json",
   "release": {
