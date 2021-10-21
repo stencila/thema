@@ -100,7 +100,7 @@
     "jest-junit": "12.0.0",
     "jsdoc-to-markdown": "7.0.1",
     "mathjax-node": "2.1.1",
-    "mini-css-extract-plugin": "1.4.0",
+    "mini-css-extract-plugin": "2.4.3",
     "normalize.css": "8.0.1",
     "postcss-combine-media-query": "1.0.1",
     "postcss-custom-media": "7.0.8",
