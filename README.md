@@ -1,52 +1,15 @@
-# Thema
+# 🎨 Thema
 
-> 🎨 Semantic themes for use with Stencila [`encoda`](https://github.com/stencila/encoda).
+**Semantic themes for executable documents**
 
-[![Build Status](https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.thema?branchName=master)](https://dev.azure.com/stencila/stencila/_build/latest?definitionId=11&branchName=master)
 [![Code coverage](https://codecov.io/gh/stencila/thema/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/thema)
 [![Visual regression test results](https://percy.io/static/images/percy-badge.svg)](https://percy.io/01dadd16/Thema)
 
-- [Quick Start](#quick-start)
-- [Themes](#themes)
-  - [Current themes](#current-themes)
-  - [Structure of themes](#structure-of-themes)
-- [Web Components](#web-components)
-- [Extensions](#extensions)
-  - [Current extensions](#current-extensions)
-  - [Use an extension](#use-an-extension)
-  - [Develop an extension](#develop-an-extension)
-- [Develop](#develop)
-  - [Prerequisites](#prerequisites)
-  - [Getting started](#getting-started)
-    - [Gallery UI parameters](#gallery-ui-parameters)
-  - [Creating a new theme](#creating-a-new-theme)
-    - [Scripted creation](#scripted-creation)
-    - [Manual creation](#manual-creation)
-    - [Approaches](#approaches)
-  - [Generated code](#generated-code)
-  - [Testing](#testing)
-    - [DOM traversal and manipulation](#dom-traversal-and-manipulation)
-    - [Visual regressions](#visual-regressions)
-  - [Committing](#committing)
-- [Acknowledgments](#acknowledgments)
-- [Utilities API](#utilities-api)
-  - [Functions](#functions)
-  - [ready(func)](#readyfunc)
-  - [first([elem], selector) ⇒ <code>Element</code> \| <code>null</code>](#firstelem-selector-%e2%87%92-codeelementcode--codenullcode)
-  - [select([elem], selector) ⇒ <code>Array.&lt;Element&gt;</code>](#selectelem-selector-%e2%87%92-codearrayltelementgtcode)
-  - [create([spec], [attributes], ...children) ⇒ <code>Element</code>](#createspec-attributes-children-%e2%87%92-codeelementcode)
-  - [tag(target, [value]) ⇒ <code>string</code> \| <code>Element</code>](#tagtarget-value-%e2%87%92-codestringcode--codeelementcode)
-  - [attrs(target, [attributes]) ⇒ <code>object</code> \| <code>undefined</code>](#attrstarget-attributes-%e2%87%92-codeobjectcode--codeundefinedcode)
-  - [attr(target, name, [value]) ⇒ <code>string</code> \| <code>null</code>](#attrtarget-name-value-%e2%87%92-codestringcode--codenullcode)
-  - [text(target, [value]) ⇒ <code>string</code> \| <code>null</code> \| <code>undefined</code>](#texttarget-value-%e2%87%92-codestringcode--codenullcode--codeundefinedcode)
-  - [append(target, ...elems)](#appendtarget-elems)
-  - [prepend(target, ...elems)](#prependtarget-elems)
-  - [before(target, ...elems)](#beforetarget-elems)
-  - [after(target, ...elems)](#aftertarget-elems)
-  - [replace(target, ...elems)](#replacetarget-elems)
-  - [wrap(target, elem)](#wraptarget-elem)
+## ⚠️ Moved
 
-## Quick Start
+This repository has been moved to the [`themes`](https://github.com/stencila/stencila/tree/master/themes) folder of our main repository, [`stencila/stencila`](https://github.com/stencila/stencila).
+
+## ⚡ Quick Start
 
 ```sh
 npm install @stencila/thema
@@ -62,7 +25,7 @@ npm install @stencila/thema
 @import '@stencila/thema/dist/themes/stencila';
 ```
 
-## Themes
+## 📦 Themes
 
 Thema comes with several premade themes. Preview and customize the themes [in the
 gallery](https://stencila.github.io/thema/), or learn how to [make one from scratch](#creating-a-new-theme).
@@ -104,7 +67,7 @@ from `encoda`.
   used to progressively enhance the theme with things like syntax highlighting
   of code blocks.
 
-## Web Components
+## 🚛 Web Components
 
 [Stencila Web Components](https://github.com/stencila/designa/tree/master/packages/components) are used to provide
 interactivity and enhancement to several document nodes.
@@ -121,7 +84,7 @@ More components will be added over time. In the meantime, the "pseudo-component"
 `src/extensions`](./src/extensions), provide styling for some other node types.
 See the [Extensions section](#extensions) for more details.
 
-## Extensions
+## 🔌 Extensions
 
 Extensions provide styling, and potentially interactivity, for node types that do not yet have corresponding web components. They are like fledgling web components, each with it's own CSS (and/or Javascript), that you can import into your own theme. Over time we expect extensions to be promoted to the Stencila components library, thereby obviating the need to import them explicitly.
 
@@ -199,7 +162,7 @@ may be better to make the necessary changes to Encoda's HTML codec. In those cas
 extension should be commented as being temporary, and be [linked to an issue in
 Encoda](https://github.com/stencila/encoda/issues) to make those changes permanent.
 
-## Develop
+## 🛠️ Develop
 
 ### Prerequisites
 
@@ -373,7 +336,7 @@ Commit messages should follow the [conventional commits](https://www.conventiona
 - `docs(README): Add some notes on testing`
 - `ci(Travis): Fix command to check themes`
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 We rely on many tools and services for which we are grateful ❤ to their developers and contributors for all their time and energy.
 
@@ -382,7 +345,7 @@ We rely on many tools and services for which we are grateful ❤ to their develo
 |    <a href="https://saucelabs.com"><img src="./.github/PoweredBySauceLabs.svg" width="150" /></a>    | Cross-browser testing platform       |
 | <a href="https://webdriver.io/"><img src="https://webdriver.io/img/webdriverio.png" width="50"/></a> | WebDriver test framework for Node.js |
 
-## Utilities API
+## 📑 Utilities API
 
 Several utility functions are provided in the [`util`](./src/util) module for traversing and manipulating the DOM. These may be useful for theme and extension authors when there is a need to modify the HTML structure of the document (e.g. adding additional purely presentational elements such as social sharing buttons). Caution should be taken to not overly modify the content. Only use these functions for things that are not possible with CSS alone.
 
