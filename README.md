@@ -1,6 +1,6 @@
 # 🎨 Thema
 
-**Semantic themes for executable documents**
+**Themes for executable documents**
 
 [![Code coverage](https://codecov.io/gh/stencila/thema/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/thema)
 [![Visual regression test results](https://percy.io/static/images/percy-badge.svg)](https://percy.io/01dadd16/Thema)
